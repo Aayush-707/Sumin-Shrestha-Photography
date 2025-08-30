@@ -14,8 +14,19 @@ export default function Footer() {
     )
 
     return(
-        <footer className="w-full pb-10 bg-[#FAF8F1]">
-            <div className="flex gap-2 p-4 justify-center items-center shadow-sm/20 bg-white mb-10 ">
+        <footer className="w-full pb-10 bg-[#F2F2F2]">
+            <div className='flex justify-between items-center lg:px-50 md:px-22 sm:px-12 py-10 px-4'>
+                <div>
+                    <h1 className='sm:text-2xl text-md font-bold mb-2'>Ready to work on a project</h1>
+                    <p className='sm:text-sm text-[10px]'>Book your event with just one call on <span className='text-blue-500 underline cursor-pointer'>+977 9841234567</span> </p>
+                </div>
+                <div>
+                    <button className='bg-white border sm:text-lg text-sm whitespace-nowrap py-2 px-6 font-semibold hover:bg-black hover:text-white cursor-pointer transition delay-150 duration-300 ease-in-out'>Call now </button>
+                </div>
+            </div>
+
+            <div 
+            className="flex gap-2 p-4 justify-center items-center shadow-[0_-2px_10px_#f0f0f0,_0_2px_10px_#819A91] bg-[#E8E8E8] mb-10 ">
                 <a href="https://www.facebook.com/sumin.shrestha.620514" target='_blank'><SocialMedia name='Facebook' src={facebook}/></a>
                 <span className='font-bold'>•</span>
                 <a href="" target='_blank'><SocialMedia name='Instagram' src={instagram}/></a> 

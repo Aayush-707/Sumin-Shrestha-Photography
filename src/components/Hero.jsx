@@ -7,52 +7,22 @@ import { homeImages } from '../../data/hero';
 import profile from '../assets/pp.jpg';
 import ImageSlider from './ImageSlider';
 import useScrollReveal from '../hooks/useScrollReveal.js';
+import useImageReveal from '../hooks/useImageReveal.js';
 
 export default function Main() {
   const [index, setIndex] = useState(-1);
   const [aboutRef, aboutVisible] = useScrollReveal();
   const [profileRef, profileVisible] = useScrollReveal();
-  const [visibleItems, setVisibleItems] = useState(
-    homeImages.map((_, i) => i < 4) // Set the first 4 items to be initially visible
-  );
-  const imageRefs = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const newVisibleItems = [...visibleItems];
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const itemIndex = imageRefs.current.indexOf(entry.target);
-            if (itemIndex > -1) {
-              newVisibleItems[itemIndex] = true;
-            }
-          }
-        });
-        setVisibleItems(newVisibleItems);
-      },
-      { threshold: 0.2 }
-    );
-
-    // Observe only the images that are not initially visible
-    imageRefs.current.slice(4).forEach((image) => {
-      if (image) observer.observe(image);
-    });
-
-    return () => {
-      imageRefs.current.slice(4).forEach((image) => {
-        if (image) observer.unobserve(image);
-      });
-    };
-  }, [visibleItems]); // This hook depends on visibleItems to update properly
+  const { visibleItems, imageRefs } = useImageReveal(homeImages);
+  
 
   return (
-    <main>
+    <main className='mb-10'>
       {/* Image Slider */}
       <ImageSlider />
 
       {/* About me section */}
-      <div className="flex bg-white justify-center items-center gap-10 md:py-40 py-20 2xl:px-80 xl:px-60 lg:px-40 md:px-20 px-6">
+      <div className="flex justify-center items-center gap-10 md:py-40 py-20 2xl:px-80 xl:px-60 lg:px-40 md:px-20 px-6">
         <img
           ref={profileRef}
           src={profile}
@@ -76,8 +46,8 @@ export default function Main() {
           <p className="sm:text-md text-sm text-gray-600 font-light mb-6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo fugiat quisquam, perferendis nam ducimus magnam alias aperiam est natus, sapiente iure, corporis sed? Soluta error alias illum officia, repellendus esse!
           </p>
-          <button className="border flex justify-center items-center gap-2 w-[150px] p-3 whitespace-nowrap hover:bg-[#212121] hover:text-white cursor-pointer">
-            <span>Call now</span>
+          <button className="border flex justify-center items-center gap-2 w-[150px] p-3 whitespace-nowrap hover:bg-[#212121] hover:text-white cursor-pointer transition delay-150 duration-300 ease-in-out ">
+            Call now
           </button>
         </div>
       </div>
@@ -85,7 +55,7 @@ export default function Main() {
       {/* Gallery Sectiom */}
       <div className="lg:px-10 sm:px-6 px-3">
          <div className='flex flex-col justify-center items-center mb-10'>
-            <h1 className='font-semibold text-4xl mb-2'>Overview</h1>
+            <h1 className='font-semibold lg:text-4xl md:text-3xl sm:text-2xl xl mb-2'>Overview</h1>
             <span>——</span>
         </div>
         <div className="lg:columns-5 md:columns-4 sm:columns-2 columns-1 gap-2 [&>img:not(:first-child)]:mt-2">
