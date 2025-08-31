@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
@@ -39,11 +39,11 @@ export default function Main() {
         >
           <h1 className="font-semibold sm:text-xl text-lg mb-4">About me</h1>
           <span className="mb-4">—</span>
-          <h2 className="sm:text-4xl text-3xl font-bold mb-6 leading-12">
+          <h2 className="sm:text-4xl text-[23px] font-bold sm:mb-6 mb-4 leading-10 sm:leading-12">
             My name is Sumin Shrestha, <br />
             I'm a <span className="text-blue-600">Photographer</span>
           </h2>
-          <p className="sm:text-md text-sm text-gray-600 font-light mb-6">
+          <p className="sm:text-md text-[12px] text-gray-600 font-light mb-6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo fugiat quisquam, perferendis nam ducimus magnam alias aperiam est natus, sapiente iure, corporis sed? Soluta error alias illum officia, repellendus esse!
           </p>
           <button className="border flex justify-center items-center gap-2 w-[150px] p-3 whitespace-nowrap hover:bg-[#212121] hover:text-white cursor-pointer transition delay-150 duration-300 ease-in-out ">
