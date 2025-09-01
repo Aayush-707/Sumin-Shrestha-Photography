@@ -49,8 +49,8 @@ export default function Navbar() {
                     <NavLink to = '/places'>  
                         <li>Places</li>
                     </NavLink>
-                    <NavLink to = '/things'>  
-                        <li>Things</li>
+                    <NavLink to = '/portfolio'>  
+                        <li>Portfolio</li>
                     </NavLink> 
                 </ul>
 
@@ -101,7 +101,7 @@ export default function Navbar() {
                     <NavLink to = '/places'>
                     <li onClick={() => setIsDropdownOpen(false)}>Places</li>
                     </NavLink>
-                    <NavLink to = '/things'>
+                    <NavLink to = '/portfolio'>
                     <li onClick={() => setIsDropdownOpen(false)}>Things</li>
                     </NavLink>
                     <NavLink to = '/clients'>
@@ -116,7 +116,7 @@ export default function Navbar() {
                 </ul>
             </div>
 
-            <SocialMediaIcons className='hidden sm:flex lg:flex gap-1 items-center lg:mr-7' />
+            <SocialMediaIcons className='hidden sm:flex lg:flex gap-1 items-center lg:mr-2' />
 
             <SocialMediaIcons className='flex sm:hidden gap-2' />
         </header>

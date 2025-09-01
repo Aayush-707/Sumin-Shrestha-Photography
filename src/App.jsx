@@ -4,11 +4,11 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import People from './pages/People'
 import Places from './pages/Places'
-import Things from './pages/Things'
 import Clients from './pages/Clients'
 import Connect from './pages/Connect'
 import About from './pages/About'
 import { Route, Routes } from 'react-router-dom'
+import Portfolio from './pages/Portfolio'
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
       <Route path='/' element={<Main />} />
       <Route path='/people' element={<People />} />
       <Route path='/places' element={<Places />} />
-      <Route path='/things' element={<Things />} />
+      <Route path='/portfolio' element={<Portfolio />} />
       <Route path='/clients' element={<Clients />} />
       <Route path='/connect' element={<Connect />} />
       <Route path='/about' element={<About />} />
