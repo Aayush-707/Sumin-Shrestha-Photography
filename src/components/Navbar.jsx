@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '../assets/Sumin-t.png'
 import facebook from '../assets/facebook-mono.png'
 import instagram from '../assets/instagram.png'
 import X from '../assets/x.png'
+import logo from '../assets/Sumin-Shrestha-t-logo.png'
 
 export default function Navbar() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -59,7 +59,7 @@ export default function Navbar() {
                         <img 
                             src={logo} 
                             alt="Logo"
-                            className='h-14 sm:h-18 md:h-20 lg:h-22 xl:28 w-auto object-contain'
+                            className='h-14 sm:h-18 md:h-20 lg:h-22 xl:h-28 w-auto object-contain'
                         />
                     </NavLink>
                     
@@ -116,7 +116,7 @@ export default function Navbar() {
                 </ul>
             </div>
 
-            <SocialMediaIcons className='hidden sm:flex lg:flex gap-1 items-center lg:mr-2' />
+            <SocialMediaIcons className='hidden sm:flex lg:flex gap-1 items-center lg:mr-5' />
 
             <SocialMediaIcons className='flex sm:hidden gap-2' />
         </header>

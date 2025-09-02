@@ -44,7 +44,7 @@ export default function About() {
                         <span className="text-[#C48F56]">I'm a Photographer.</span>
                     </h1>
                     <span>——</span>
-                    <p className="my-6 sm:my-10 text-xs sm:text-sm leading-6 sm:leading-7 pr-0 lg:pr-8 xl:pr-12">
+                    <p className="my-6 sm:my-8 text-xs sm:text-sm leading-6 sm:leading-7 pr-0 lg:pr-8 xl:pr-12">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus soluta corporis asperiores, blanditiis neque culpa odio a nisi impedit natus cupiditate suscipit perspiciatis atque ipsam quod rem minus aliquid ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio facere officiis tempore mollitia natus, inventore porro repudiandae cumque, expedita deserunt necessitatibus corporis nostrum iste voluptatibus perferendis modi eum architecto. Corrupti?
                     </p>
                 </div>

@@ -1,7 +1,7 @@
 import facebook from '../assets/facebook-mono.png'
 import instagram from '../assets/instagram.png'
 import X from '../assets/x.png'
-import logo from '../assets/Sumin-t.png'
+import logo from '../assets/Sumin-Shrestha-t-logo.png'
 import { NavLink } from 'react-router-dom'
 
 export default function Footer() {

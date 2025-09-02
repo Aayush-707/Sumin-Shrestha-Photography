@@ -1,9 +1,47 @@
+import { useForm } from "react-hook-form"
+import { useState} from 'react'
 import location from '../assets/location.png'
 import mobile from '../assets/mobile.png'
 import mail from '../assets/mail.png'
 
 export default function Connect(){
-    const FormElements = ({type, id, name, autocomplete, title, placeholder}) => (
+    const { register, handleSubmit, formState: { errors }, reset } = useForm({mode: "onBlur"})
+    const [isSubmitting, setIsSubmitting] = useState(false)
+
+    const onSubmit = async (data) => {
+        setIsSubmitting(true)
+            try {
+                console.log("Submitting form...");
+                
+                const response = await fetch('https://formspree.io/f/xvgbbbog', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: data.user_name,
+                        email: data.user_email,
+                        phone: data.phone_number,
+                        message: data.user_message
+                    }),
+                });
+
+                if (response.ok) {
+                    console.log("Form Submitted Successfully ✅");
+                    alert("Thank you! Your message has been sent.");
+                    reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error("Form submission error:", error);
+                alert("Sorry, there was an error sending your message. Please try again.");
+            } finally {
+                setIsSubmitting(false)
+        }
+        };
+
+    const FormElements = ({type, id, name, autoComplete, title, placeholder, rules}) => (
         <div className="flex flex-col">
             <label htmlFor={id} className='text-sm mb-1'>
                 {title}
@@ -11,11 +49,14 @@ export default function Connect(){
             <input 
                 type={type}
                 id={id} 
-                name={name}
                 placeholder={placeholder} 
-                autoComplete={autocomplete} required
+                autoComplete={autoComplete}
+                {...register(name, rules)} 
                 className="border p-2 text-sm w-[300px] sm:w-[230px]"
-                />
+            />
+            {errors[name] && (
+                <span className="text-red-500 text-xs mt-1">{errors[name].message}</span>
+            )}
         </div>
     )
 
@@ -27,13 +68,15 @@ export default function Connect(){
                 alt={src}
                 className='md:size-7 size-5' />
             </div>
-            <span className='text-sm'>{text}</span>
+            <span className={`text-sm ${src === mobile ? "hover:underline cursor-pointer text-blue-500" : src === mail ? "hover:underline cursor-pointer" : "" }`}>
+                {text}
+            </span>
         </div>
     )
 
     return(
         <section className="sm:mt-36 mt-30 lg:px-12 2xl:px-20 md:px-10 px-6">
-            <h1 className="text-start md:text-3xl text-xl font-bold md:mb-6 mb-4 ml-6">Contact me</h1>
+            <h1 className="text-start md:text-3xl text-xl font-bold mb-4 ml-6">Contact me</h1>
             <div className="flex flex-col xl:flex-row mb-16">
                 <div className="flex flex-col lg:flex-row lg:items-center 2xl:gap-12 xl:gap-2 mb-10 xl:mb-0">
                     <div className='lg:w-[50%] bg-[#F0F0F0] md:text-sm text-[12px] p-6 [&>p]:mb-4 '>
@@ -47,7 +90,7 @@ export default function Connect(){
                         <ContactElements src={mail} text='suminshrestha77@gmail.com'/>
                     </div>
                 </div>
-                <form action="" className="flex flex-col p-6">
+                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-6">
                     <h2 className='text-sm font-semibold mb-8'>Get in touch with me if you have any queries and i will get back to you as soon as possible.</h2>
                     <fieldset className="space-y-4">
                         <FormElements
@@ -55,8 +98,9 @@ export default function Connect(){
                             type = 'text'
                             id = 'name'
                             name = 'user_name'
-                            autocomplete = 'name'
+                            autoComplete = 'name'
                             placeholder='Your Name'
+                            rules={{ required: "Name is required", minLength: { value: 3, message: "Name must be at least 3 characters" } }}
                         />
                         <div className="flex sm:flex-row flex-col gap-4">
                             <FormElements
@@ -64,8 +108,12 @@ export default function Connect(){
                                 type = 'email'
                                 id = 'email'
                                 name = 'user_email'
-                                autocomplete = 'email'
+                                autoComplete = 'email'
                                 placeholder='Your Email'
+                                rules={{ 
+                                    required: "Email is required", 
+                                    pattern: { value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/, message: "Enter a valid email" } 
+                                }}
                             />
 
                             <FormElements
@@ -73,8 +121,11 @@ export default function Connect(){
                                 type = 'tel'
                                 id = 'phone'
                                 name = 'phone_number'
-                                autocomplete = 'tel'
+                                autoComplete = 'tel'
                                 placeholder='Your Phone Number '
+                                rules={{
+                                    pattern: { value: /^[0-9]+$/, message: "Phone number must contain only digits" }
+                                }}
                             />
                         </div>
 
@@ -84,17 +135,26 @@ export default function Connect(){
                             </label>
                             <textarea 
                                 id="message" 
-                                name="user_message" 
-                                rows="5" required
-                                className="border-2 p-2 w-[300px] sm:w-[476px]"      
-                            >
-                            </textarea>
+                                rows="5" 
+                                {...register("user_message", { 
+                                    required: "Message is required", 
+                                    minLength: { value: 10, message: "Message must be at least 10 characters" } 
+                                })}
+                                className="border p-2 w-[300px] sm:w-[476px]"      
+                            />
+                            {errors.user_message && (
+                                <span className="text-red-500 text-xs mt-1">{errors.user_message.message}</span>
+                            )}
                         </div>
                     </fieldset>
 
                     <div className="flex mt-4">
-                        <button type="submit" className="group border py-2 px-4 text-md flex items-center gap-2 hover:bg-black cursor-pointer transition duration-300 ease-in-out">
-                            <span className="text-black group-hover:text-white text-sm">Send Message</span>
+                        <button type="submit"
+                        disabled = {isSubmitting} 
+                        className="group border py-2 px-4 text-md flex items-center gap-2 hover:bg-black cursor-pointer transition duration-300 ease-in-out">
+                            <span className={`text-sm ${isSubmitting ? 'text-gray-500' : 'text-black group-hover:text-white'}`}>
+                                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                            </span>                            
                             <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 385.756 385.756"
