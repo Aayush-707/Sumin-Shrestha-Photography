@@ -22,7 +22,7 @@ export default function About() {
     )
 
     return (
-        <section className="mt-24 sm:mt-36 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-40">
+        <section className="mt-24 sm:mt-44 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-40">
             
             {/* About section */}
             <div className="flex flex-col lg:flex-row items-center justify-center gap-1 lg:gap-2">
@@ -30,7 +30,7 @@ export default function About() {
                 ref={profileRef}
                 src={about} 
                 alt="about" 
-                className={`h-[50vh] sm:h-[60vh] lg:h-[80vh] object-cover rounded-md transition-all duration-700 transform 
+                className={`h-[50vh] sm:h-[60vh] lg:h-[75vh] object-cover rounded-md transition-all duration-700 transform 
                            ${profileVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-40"}`} 
             />
                 
@@ -59,7 +59,7 @@ export default function About() {
                     <Cards 
                         src={lights} 
                         title="LIGHT COMPOSURE" 
-                        description="Compose your photograph in a way that the play and contrast between light and shadow becomes the focal point of the image." 
+                        description="Compose your photograph in a way that the contrast between light and shadow becomes the focal point of the image." 
                     />
                     <Cards 
                         src={skills} 

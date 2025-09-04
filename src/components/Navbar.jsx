@@ -39,16 +39,17 @@ export default function Navbar() {
     )
 
     return (
-        <header className='flex flex-col justify-center items-center bg-white/5 backdrop-blur-md absolute top-0 left-0 right-0 z-20 pb-4'>
+        <header 
+        className='flex flex-col justify-center items-center bg-white/5 backdrop-blur-md absolute lg:top-1 lg:left-2 xl:left-3 2xl:left-4 right-0 z-20 py-2 lg:w-[98%] w-full lg:rounded-xl'>
             <nav className='flex items-center w-full max-w-7xl'>
                 
                 <ul className='hidden lg:flex gap-8 text-lg italic pl-20 xl:pl-30 *:hover:font-bold'>
-                    <NavLink to = '/people'>
-                        <li>People</li>
+                    <NavLink to = '/'>
+                        <li>Home</li>
                     </NavLink>
-                    <NavLink to = '/places'>  
-                        <li>Places</li>
-                    </NavLink>
+                    <a href="#overview">
+                        <li>Overview</li>
+                    </a>
                     <NavLink to = '/portfolio'>  
                         <li>Portfolio</li>
                     </NavLink> 
@@ -95,12 +96,12 @@ export default function Navbar() {
                 }`}
             >
                 <ul className='flex flex-col gap-4 text-lg font-semibold md:font-medium italic rounded shadow-2xl bg-white/80 backdrop-blur-md p-4 mr-2 *:hover:font-bold text-end'>
-                    <NavLink to = '/people'>
-                    <li onClick={() => setIsDropdownOpen(false)}>People</li>
+                    <NavLink to = '/'>
+                    <li onClick={() => setIsDropdownOpen(false)}>Home</li>
                     </NavLink>
-                    <NavLink to = '/places'>
-                    <li onClick={() => setIsDropdownOpen(false)}>Places</li>
-                    </NavLink>
+                    <a href = '#overview'>
+                    <li onClick={() => setIsDropdownOpen(false)}>Overview</li>
+                    </a>
                     <NavLink to = '/portfolio'>
                     <li onClick={() => setIsDropdownOpen(false)}>Things</li>
                     </NavLink>

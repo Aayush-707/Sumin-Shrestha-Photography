@@ -1,5 +1,9 @@
+import ImageSlider from '../components/ImageSlider'
+
 export default function Clients(){
     return(
-        <h1>Clients</h1>
+        <section>
+            <ImageSlider />
+        </section>
     )
 }

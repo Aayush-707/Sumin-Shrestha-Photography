@@ -4,6 +4,40 @@ import location from '../assets/location.png'
 import mobile from '../assets/mobile.png'
 import mail from '../assets/mail.png'
 
+
+const FormElements = ({type, id, name, autoComplete, title, placeholder, rules, register, errors}) => (
+    <div className="flex flex-col">
+        <label htmlFor={id} className='text-sm mb-1'>
+            {title}
+        </label>
+        <input 
+            type={type}
+            id={id} 
+            placeholder={placeholder} 
+            autoComplete={autoComplete}
+            {...register(name, rules)} 
+            className="border-2 border-gray-300 p-2 text-sm w-[300px] sm:w-[230px] focus:border-black focus:outline-none transition-colors "
+        />
+        {errors[name] && (
+            <span className="text-red-500 text-xs mt-1">{errors[name].message}</span>
+        )}
+    </div>
+)
+
+const ContactElements = ({src, text}) => (
+    <div className='flex items-center gap-4'> 
+        <div className='border-2 border-[#C48F56] rounded-full p-5'>
+            <img 
+            src={src} 
+            alt={src}
+            className='md:size-7 size-5' />
+        </div>
+        <span className={`text-sm ${src === mobile ? "hover:underline cursor-pointer text-blue-500" : src === mail ? "hover:underline cursor-pointer" : "" }`}>
+            {text}
+        </span>
+    </div>
+)
+
 export default function Connect(){
     const { register, handleSubmit, formState: { errors }, reset } = useForm({mode: "onBlur"})
     const [isSubmitting, setIsSubmitting] = useState(false)
@@ -41,41 +75,8 @@ export default function Connect(){
         }
         };
 
-    const FormElements = ({type, id, name, autoComplete, title, placeholder, rules}) => (
-        <div className="flex flex-col">
-            <label htmlFor={id} className='text-sm mb-1'>
-                {title}
-            </label>
-            <input 
-                type={type}
-                id={id} 
-                placeholder={placeholder} 
-                autoComplete={autoComplete}
-                {...register(name, rules)} 
-                className="border p-2 text-sm w-[300px] sm:w-[230px]"
-            />
-            {errors[name] && (
-                <span className="text-red-500 text-xs mt-1">{errors[name].message}</span>
-            )}
-        </div>
-    )
-
-    const ContactElements = ({src, text}) => (
-        <div className='flex items-center gap-4'> 
-            <div className='border-2 border-[#C48F56] rounded-full p-5'>
-                <img 
-                src={src} 
-                alt={src}
-                className='md:size-7 size-5' />
-            </div>
-            <span className={`text-sm ${src === mobile ? "hover:underline cursor-pointer text-blue-500" : src === mail ? "hover:underline cursor-pointer" : "" }`}>
-                {text}
-            </span>
-        </div>
-    )
-
     return(
-        <section className="sm:mt-36 mt-30 lg:px-12 2xl:px-20 md:px-10 px-6">
+        <section className="sm:mt-44 mt-30 lg:px-12 2xl:px-20 md:px-10 px-6">
             <h1 className="text-start md:text-3xl text-xl font-bold mb-4 ml-6">Contact me</h1>
             <div className="flex flex-col xl:flex-row mb-16">
                 <div className="flex flex-col lg:flex-row lg:items-center 2xl:gap-12 xl:gap-2 mb-10 xl:mb-0">
@@ -84,15 +85,15 @@ export default function Connect(){
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eveniet possimus temporibus pariatur</p>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti, aliquid cupiditate distinctio, maiores, quo tenetur suscipit explicabo autem possimus earum corporis nulla voluptatum aliquam sed enim temporibus tempora veritatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium architecto odio a possimus libero porro dicta repudiandae voluptate maxime totam repellat corporis</p>
                     </div>
-                    <div className='lg:w-[50%] space-y-4 sm:pl-6'>
+                    <div className='lg:w-[50%] space-y-4 mt-8 pl-6'>
                         <ContactElements src={location} text='Bhaktapur, Madhyapur Thimi'/>
                         <ContactElements src={mobile} text='+977 9841234567'/>
                         <ContactElements src={mail} text='suminshrestha77@gmail.com'/>
                     </div>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-6">
-                    <h2 className='text-sm font-semibold mb-8'>Get in touch with me if you have any queries and i will get back to you as soon as possible.</h2>
-                    <fieldset className="space-y-4">
+                    <h2 className='text-sm font-semibold mb-8'>Get in touch with me if you have any queries and I will get back to you as soon as possible.</h2>
+                    <fieldset className="space-y-4" disabled = {isSubmitting}>
                         <FormElements
                             title = 'Name:'
                             type = 'text'
@@ -101,6 +102,8 @@ export default function Connect(){
                             autoComplete = 'name'
                             placeholder='Your Name'
                             rules={{ required: "Name is required", minLength: { value: 3, message: "Name must be at least 3 characters" } }}
+                            register={register}
+                            errors={errors}
                         />
                         <div className="flex sm:flex-row flex-col gap-4">
                             <FormElements
@@ -114,6 +117,8 @@ export default function Connect(){
                                     required: "Email is required", 
                                     pattern: { value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/, message: "Enter a valid email" } 
                                 }}
+                                register={register}
+                                errors={errors}
                             />
 
                             <FormElements
@@ -124,8 +129,10 @@ export default function Connect(){
                                 autoComplete = 'tel'
                                 placeholder='Your Phone Number '
                                 rules={{
-                                    pattern: { value: /^[0-9]+$/, message: "Phone number must contain only digits" }
+                                    pattern: { value: /^[0-9+\-\s()]+$/, message: "Please enter a valid phone number" }
                                 }}
+                                register={register}
+                                errors={errors}
                             />
                         </div>
 
@@ -135,12 +142,13 @@ export default function Connect(){
                             </label>
                             <textarea 
                                 id="message" 
-                                rows="5" 
+                                rows="6"
+                                placeholder="Your message" 
                                 {...register("user_message", { 
                                     required: "Message is required", 
                                     minLength: { value: 10, message: "Message must be at least 10 characters" } 
                                 })}
-                                className="border p-2 w-[300px] sm:w-[476px]"      
+                                className="border-2 border-gray-300 text-sm p-2 w-[300px] sm:w-[476px] focus:border-black focus:outline-none transition-colors"      
                             />
                             {errors.user_message && (
                                 <span className="text-red-500 text-xs mt-1">{errors.user_message.message}</span>

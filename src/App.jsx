@@ -2,8 +2,6 @@ import './App.css'
 import Main from './components/Hero'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
-import People from './pages/People'
-import Places from './pages/Places'
 import Clients from './pages/Clients'
 import Connect from './pages/Connect'
 import About from './pages/About'
@@ -17,8 +15,6 @@ function App() {
     <Navbar /> 
     <Routes>
       <Route path='/' element={<Main />} />
-      <Route path='/people' element={<People />} />
-      <Route path='/places' element={<Places />} />
       <Route path='/portfolio' element={<Portfolio />} />
       <Route path='/clients' element={<Clients />} />
       <Route path='/connect' element={<Connect />} />
