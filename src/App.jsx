@@ -1,5 +1,5 @@
 import './App.css'
-import Main from './components/Hero'
+import Main from './pages/Hero'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Clients from './pages/Clients'

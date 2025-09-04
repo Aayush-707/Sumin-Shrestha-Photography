@@ -7,9 +7,9 @@ import { NavLink } from 'react-router-dom'
 export default function Footer() {
     
     const SocialMedia = ({name, src}) => (
-        <div className='flex gap-1 cursor-pointer'>
-            <span className='text-[12px] font-[500] hover:font-bold'>{name}</span>
-            <img src={src} alt="" className='size-4'/>
+        <div className='flex gap-1 cursor-pointer group'>
+            <span className='text-[12px] font-[500] group-hover:font-bold'>{name}</span>
+            <img src={src} alt="" className='size-4 group-hover:scale-110 transition'/>
         </div>
     )
 
@@ -34,11 +34,17 @@ export default function Footer() {
 
             <div 
             className="flex gap-2 p-4 justify-center items-center shadow-[0_-2px_10px_#f0f0f0,_0_2px_10px_#819A91] bg-[#E8E8E8] mb-10 ">
-                <a href="https://www.facebook.com/sumin.shrestha.620514" target='_blank'><SocialMedia name='Facebook' src={facebook}/></a>
+                <a href="https://www.facebook.com/sumin.shrestha.620514" target='_blank'>
+                <SocialMedia name='Facebook' src={facebook}/>
+                </a>
                 <span className='font-bold'>•</span>
-                <a href="" target='_blank'><SocialMedia name='Instagram' src={instagram}/></a> 
+                <a href="" target='_blank'>
+                    <SocialMedia name='Instagram' src={instagram}/>
+                </a> 
                 <span className='font-bold'>•</span>
-                <a href="" target='_blank'><SocialMedia name='Twitter' src={X}/></a>
+                <a href="" target='_blank'>
+                    <SocialMedia name='Twitter' src={X}/>
+                </a>
             </div>
 
             <div className='flex p-4'>
@@ -53,22 +59,22 @@ export default function Footer() {
                     <div className='hidden md:block'>
                         <h1 className='text-2xl font-semibold mb-4 whitespace-nowrap'>Quick links</h1>
                         <ul className='list-disc ml-6 leading-6 text-sm *:hover:font-bold '>
-                            <NavLink to = "/people">
-                            <li>People</li>
+                            <NavLink to = "/">
+                            <li>Home</li>
                             </NavLink>
-                            <NavLink to = "places">
-                            <li>Places</li>
+                            <NavLink to = "/overview">
+                            <li>Overview</li>
                             </NavLink>
-                            <NavLink to = "portfolio">
+                            <NavLink to = "/portfolio">
                             <li>Portfolio</li>
                             </NavLink>
-                            <NavLink to = "clients">
+                            <NavLink to = "/clients">
                             <li>Clients</li>
                             </NavLink>
-                            <NavLink to = "connect">
+                            <NavLink to = "/connect">
                             <li>Connect</li>
                             </NavLink>
-                            <NavLink to = "about">
+                            <NavLink to = "/about">
                             <li>About</li>
                             </NavLink>
                         </ul>

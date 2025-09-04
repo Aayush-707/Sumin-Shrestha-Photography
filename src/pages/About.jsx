@@ -12,17 +12,17 @@ export default function About() {
     const [profileRef, profileVisible] = useScrollReveal();
     
     const Cards = ({src, title, description}) => (
-        <div className="flex flex-col justify-center items-center col-span-1 space-y-4 mb-10 px-4">
-            <div className="rounded-full border-2 border-[#C48F56] p-6">
-                <img src={src} className="size-12 sm:size-14 object-contain" /> 
+        <div className="flex flex-col justify-center items-center col-span-1 space-y-4 mb-10 px-4 w-[372px]">
+            <div className="rounded-full border-2 border-[#C48F56] p-4">
+                <img src={src} className="size-8 sm:size-12 object-contain" /> 
             </div>
-            <h2 className="text-base sm:text-lg font-semibold text-center">{title}</h2>
-            <p className="text-xs sm:text-sm text-center leading-6 px-2 sm:px-6">{description}</p>
+            <h2 className="text-base sm:text-base font-semibold text-center">{title}</h2>
+            <p className="text-xs text-gray-500 text-center leading-6 px-2 sm:px-6">{description}</p>
         </div>
     )
 
     return (
-        <section className="mt-24 sm:mt-44 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-40">
+        <section className="pt-24 sm:pt-44 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-40">
             
             {/* About section */}
             <div className="flex flex-col lg:flex-row items-center justify-center gap-1 lg:gap-2">
@@ -55,7 +55,7 @@ export default function About() {
                 <h1 className="text-center lg:text-4xl md:text-3xl sm:text-2xl xl font-semibold">What to expect</h1>
                 <p className="text-center">——</p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center-safe gap-6 mt-10">
                     <Cards 
                         src={lights} 
                         title="LIGHT COMPOSURE" 

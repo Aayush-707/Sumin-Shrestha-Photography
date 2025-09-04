@@ -117,7 +117,7 @@ export default function Navbar() {
                 </ul>
             </div>
 
-            <SocialMediaIcons className='hidden sm:flex lg:flex gap-1 items-center lg:mr-5' />
+            <SocialMediaIcons className='hidden sm:flex lg:flex gap-1 items-center' />
 
             <SocialMediaIcons className='flex sm:hidden gap-2' />
         </header>
