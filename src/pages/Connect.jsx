@@ -3,6 +3,7 @@ import { useState} from 'react'
 import location from '../assets/location.png'
 import mobile from '../assets/mobile.png'
 import mail from '../assets/mail.png'
+import useScrollReveal from "../hooks/useScrollReveal"
 
 
 const FormElements = ({type, id, name, autoComplete, title, placeholder, rules, register, errors}) => (
@@ -24,23 +25,24 @@ const FormElements = ({type, id, name, autoComplete, title, placeholder, rules, 
     </div>
 )
 
-const ContactElements = ({src, text}) => (
-    <div className='flex items-center gap-4'> 
-        <div className='border-2 border-[#C48F56] rounded-full p-5'>
-            <img 
-            src={src} 
-            alt={src}
-            className='md:size-7 size-5' />
-        </div>
-        <span className={`text-sm ${src === mobile ? "hover:underline cursor-pointer text-blue-500" : src === mail ? "hover:underline cursor-pointer" : "" }`}>
-            {text}
-        </span>
-    </div>
-)
-
 export default function Connect(){
     const { register, handleSubmit, formState: { errors }, reset } = useForm({mode: "onBlur"})
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const [connectRef, connectVisible] = useScrollReveal()
+
+    const ContactElements = ({src, text}) => (
+        <div className='flex items-center gap-4'> 
+            <div className='border-2 border-[#C48F56] rounded-full p-5'>
+                <img 
+                src={src} 
+                alt={src}
+                className='lg:size-6 size-5' />
+            </div>
+            <span className={`text-sm ${src === mobile ? "hover:underline cursor-pointer text-blue-500" : src === mail ? "hover:underline cursor-pointer" : "" }`}>
+                {text}
+            </span>
+        </div>
+    )
 
     const onSubmit = async (data) => {
         setIsSubmitting(true)
@@ -76,14 +78,20 @@ export default function Connect(){
         };
 
     return(
-        <section className="sm:mt-44 mt-30 lg:px-12 2xl:px-20 md:px-10 px-6">
-            <h1 className="text-start md:text-3xl text-xl font-bold mb-4 ml-6">Contact me</h1>
-            <div className="flex flex-col xl:flex-row mb-16">
+        <section ref={connectRef} className={`sm:pt-44 pt-30 lg:px-12 2xl:px-20 md:px-10 px-6 transition-all duration-1000 transform ${connectVisible ? "opacity-100" : "opacity-20"}`}>
+            <h1 className="text-start md:text-2xl 2xl:text-3xl text-xl font-bold mb-4 ml-6">Contact me</h1>
+            <div className="flex flex-col xl:flex-row mb-20">
                 <div className="flex flex-col lg:flex-row lg:items-center 2xl:gap-12 xl:gap-2 mb-10 xl:mb-0">
-                    <div className='lg:w-[50%] bg-[#F0F0F0] md:text-sm text-[12px] p-6 [&>p]:mb-4 '>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit beatae fugiat, possimus quaerat quos omnis necessitatibus ipsum temporibus.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eveniet possimus temporibus pariatur</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti, aliquid cupiditate distinctio, maiores, quo tenetur suscipit explicabo autem possimus earum corporis nulla voluptatum aliquam sed enim temporibus tempora veritatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium architecto odio a possimus libero porro dicta repudiandae voluptate maxime totam repellat corporis</p>
+                    <div className='lg:w-[50%] bg-[#F0F0F0] lg:text-sm text-xs p-6 text-gray-500'>
+                        <p className="mb-4 opacity-100 animate-fade-in [animation-fill-mode:forwards]">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit beatae fugiat, possimus quaerat quos omnis necessitatibus ipsum temporibus.
+                        </p>
+                        <p className="mb-4 opacity-100 animate-fade-in [animation-fill-mode:forwards]">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eveniet possimus temporibus pariatur
+                        </p>
+                        <p className="mb-4 opacity-100 animate-fade-in [animation-fill-mode:forwards]">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti, aliquid cupiditate distinctio, maiores, quo tenetur suscipit explicabo autem possimus earum corporis nulla voluptatum aliquam sed enim temporibus tempora veritatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium architecto odio a possimus libero porro dicta repudiandae voluptate maxime totam repellat corporis
+                        </p>
                     </div>
                     <div className='lg:w-[50%] space-y-4 mt-8 pl-6'>
                         <ContactElements src={location} text='Bhaktapur, Madhyapur Thimi'/>
@@ -91,6 +99,7 @@ export default function Connect(){
                         <ContactElements src={mail} text='suminshrestha77@gmail.com'/>
                     </div>
                 </div>
+
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-6">
                     <h2 className='text-sm font-semibold mb-8'>Get in touch with me if you have any queries and I will get back to you as soon as possible.</h2>
                     <fieldset className="space-y-4" disabled = {isSubmitting}>

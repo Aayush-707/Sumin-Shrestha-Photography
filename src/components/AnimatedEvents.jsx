@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 
-
 export const EventsElement = ({ number, title }) => {
         const [currentNumber, setCurrentNumber] = useState(0)
         const [isVisible, setIsVisible] = useState(false)

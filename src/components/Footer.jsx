@@ -18,7 +18,7 @@ export default function Footer() {
             <div className='flex justify-between items-center lg:px-50 md:px-22 sm:px-12 py-10 px-4'>
                 <div>
                     <h1 className='sm:text-2xl text-md font-bold mb-2'>Ready to work on a project</h1>
-                    <p className='sm:text-sm text-[10px]'>Book your event with just one call on <span className='text-blue-500 underline cursor-pointer'>+977 9841234567</span> </p>
+                    <p className='sm:text-sm text-[10px] text-gray-500'>Book your event with just one call </p>
                 </div>
                 <button className="group border flex justify-center items-center gap-1 w-[140px] p-2 whitespace-nowrap hover:bg-[#212121] cursor-pointer transition duration-300 ease-in-out">
                     <svg

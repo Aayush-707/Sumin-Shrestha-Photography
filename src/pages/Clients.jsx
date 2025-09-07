@@ -1,11 +1,17 @@
-import { useState, useEffect } from 'react'
 import client1 from '../assets/client-1.jpeg'
 import facebook from '../assets/facebook-mono.png'
 import instagram from '../assets/instagram.png'
+import { EventsElement } from '../components/AnimatedEvents'
+import useScrollReveal from '../hooks/useScrollReveal'
 
 export default function Clients(){
-    const ClientsElements = ({src, name, description}) => (
-        <div className='sm:w-md bg-[#F0F0F0] rounded'>
+    const ClientsElements = ({src, name, description}) => {
+        const [clientRef, clientVisible] = useScrollReveal()
+        return(
+        <div 
+            ref={clientRef} 
+            className={`sm:w-md bg-[#F0F0F0] rounded transition-all duration-1000 transform ${clientVisible ? "opacity-100" : "opacity-20"}`}
+        >
             <img src={src} alt="client-1-image" className='sm:h-[300px] w-md object-cover shadow-2xl' />
             <div className='p-4 space-y-4'>
                 <h1 className='text-xl font-bold'>{name}</h1>
@@ -16,74 +22,15 @@ export default function Clients(){
                 </div>
             </div>
         </div>
-    )
+    )}
 
-    const EventsElement = ({ number, title }) => {
-        const [currentNumber, setCurrentNumber] = useState(0)
-        const [isVisible, setIsVisible] = useState(false)
-        const [elementRef, setElementRef] = useState(null)
-
-        useEffect(() => {
-            if (!elementRef) return
-
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting && !isVisible) {
-                        setIsVisible(true)
-                    }
-                },
-                { threshold: 1 }
-            )
-
-            observer.observe(elementRef)
-            return () => observer.disconnect()
-        }, [elementRef, isVisible])
-
-        useEffect(() => {
-            if (!isVisible) return
-
-            let startTime = null
-            const duration = 3000
-            const targetNumber = parseInt(number)
-
-            const animate = (timestamp) => {
-                if (!startTime) startTime = timestamp
-                const progress = Math.min((timestamp - startTime) / duration, 1)
-
-                const easeInOutCubic = progress < 0.5 
-                    ? 4 * progress * progress * progress 
-                    : 1 - Math.pow(-2 * progress + 2, 3) / 2
-                const currentValue = Math.floor(easeInOutCubic * targetNumber)
-                
-                setCurrentNumber(currentValue)
-
-                if (progress < 1) {
-                    requestAnimationFrame(animate)
-                } else {
-                    setCurrentNumber(targetNumber)
-                }
-            }
-
-            requestAnimationFrame(animate)
-        }, [isVisible, number])
-
-        return (
-            <div 
-                ref={setElementRef}
-                className='flex flex-col items-center gap-1 rounded'
-            >
-                <h1 className='xl:text-3xl lg:text-2xl text-xl font-bold text-[#C48F56] tabular-nums transition-all duration-200'>
-                    {currentNumber}
-                </h1>
-                <h2 className='xl:text-[16px] lg:text-sm text-[12px] text-center whitespace-nowrap font-semibold'>
-                    {title}
-                </h2>
-            </div>
-        )
-    }
-
-    const ServicesElement = ({src, title, description}) => (
-        <div className='sm:w-sm space-y-4 flex flex-col items-center'>
+    const ServicesElement = ({src, title, description}) => {
+        const [serviceRef, serviceVisible] = useScrollReveal()
+        return(
+        <div 
+            ref={serviceRef} 
+            className={`sm:w-sm space-y-4 flex flex-col items-center transition-all duration-700 transform ${serviceVisible ? "opacity-100" : "opacity-20"} `}
+        >
             <img src={src} alt="serv" className='sm:w-sm sm:h-[250px] h-[200px] w-[400px] object-cover rounded ' />
             <div className='text-center space-y-2'>
                 <h1 className='text-xl font-bold'>{title}</h1>
@@ -93,7 +40,7 @@ export default function Clients(){
                 View more
             </button>
         </div>
-    )
+    )}
 
     return(
         <section className='pt-30 sm:pt-44 mb-20 px-4 md:px-8 lg:px-14 xl:px-20 2xl:px-30'>
