@@ -44,13 +44,21 @@ export default function Navbar() {
             <nav className='flex items-center w-full max-w-7xl'>
                 
                 <ul className='hidden lg:flex gap-8 text-lg italic pl-20 xl:pl-30 *:hover:font-bold'>
-                    <NavLink to = '/'>
+                    <NavLink to = '/'
+                        className={({ isActive }) =>
+                        isActive ? "text-[#C48F56] font-semibold border-b-3 border-[#C48F56]" : "text-black hover:text-[#C48F56]"
+                        } 
+                    >
                         <li>Home</li>
                     </NavLink>
-                    <a href="#overview">
+                    <a href="#overview" className='hover:text-[#C48F56] text-black'>
                         <li>Overview</li>
                     </a>
-                    <NavLink to = '/portfolio'>  
+                    <NavLink to = '/portfolio'
+                        className={({ isActive }) =>
+                        isActive ? "text-[#C48F56] font-semibold border-b-3 border-[#C48F56]" : "text-black hover:text-[#C48F56]"
+                        } 
+                    >  
                         <li>Portfolio</li>
                     </NavLink> 
                 </ul>
@@ -67,13 +75,25 @@ export default function Navbar() {
                 </div>
 
                 <ul className='hidden lg:flex gap-8 text-lg italic pr-20 xl:pr-30 *:hover:font-bold'>
-                    <NavLink to = '/clients'>
+                    <NavLink to = '/clients'
+                        className={({ isActive }) =>
+                        isActive ? "text-[#C48F56] font-semibold border-b-3 border-[#C48F56]" : "text-black hover:text-[#C48F56]"
+                        } 
+                    >
                         <li>Clients</li>
                     </NavLink>
-                    <NavLink to = '/connect'>
+                    <NavLink to = '/connect'
+                        className={({ isActive }) =>
+                        isActive ? "text-[#C48F56] font-semibold border-b-3 border-[#C48F56]" : "text-black hover:text-[#C48F56]"
+                        } 
+                    >
                         <li>Connect</li>
                     </NavLink>
-                    <NavLink to = '/about'>
+                    <NavLink to = '/about'
+                        className={({ isActive }) =>
+                        isActive ? "text-[#C48F56] font-semibold border-b-3 border-[#C48F56]" : "text-black hover:text-[#C48F56]"
+                        } 
+                    >
                         <li>About</li>
                     </NavLink>
                 </ul>

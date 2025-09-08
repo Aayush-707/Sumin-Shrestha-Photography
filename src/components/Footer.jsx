@@ -62,9 +62,9 @@ export default function Footer() {
                             <NavLink to = "/">
                             <li>Home</li>
                             </NavLink>
-                            <NavLink to = "/overview">
+                            <a href="#overview">
                             <li>Overview</li>
-                            </NavLink>
+                            </a>
                             <NavLink to = "/portfolio">
                             <li>Portfolio</li>
                             </NavLink>
