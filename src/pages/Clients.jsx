@@ -57,9 +57,9 @@ export default function Clients(){
                 />
                 
                 <div className='flex lg:flex-col flex-row  items-center rounded md:gap-20 gap-4 bg-[#F0F0F0] lg:py-12 lg:px-8 px-5 py-6'>
-                    <EventsElement number = '116' title = 'Personal Events' />
-                    <EventsElement number = '62' title = 'Weddings Events' />
-                    <EventsElement number = '180' title = 'Happy Clients' />
+                    <EventsElement number = '80' title = 'Personal Events' />
+                    <EventsElement number = '56' title = 'Weddings Events' />
+                    <EventsElement number = '44' title = 'Social Events' />
                 </div>
             </div>
 

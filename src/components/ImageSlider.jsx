@@ -3,12 +3,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import img1 from "../assets/imageSlider/bg-1.jpg";
 import img2 from "../assets/imageSlider/bg-2.jpg";
-import img3 from "../assets/imageSlider/bg-3.jpg";
+// import img3 from "../assets/imageSlider/bg-3.jpg";
 // import img4 from "../assets/imageSlider/bg-4.jpg";
 // import img5 from "../assets/imageSlider/bg-5.jpg";
 
 export default function ImageSlider() {
-  const images = [img1, img2, img3,];
+  const images = [img1, img2];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -35,14 +35,14 @@ export default function ImageSlider() {
 
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-transparent text-white cursor-pointer"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-transparent text-gray-400 cursor-pointer"
       >
         <ChevronLeft size={40} />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-transparent text-white cursor-pointer"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-transparent text-gray-400 cursor-pointer"
       >
         <ChevronRight size={40} />
       </button>

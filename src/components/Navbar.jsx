@@ -123,7 +123,7 @@ export default function Navbar() {
                     <li onClick={() => setIsDropdownOpen(false)}>Overview</li>
                     </a>
                     <NavLink to = '/portfolio'>
-                    <li onClick={() => setIsDropdownOpen(false)}>Things</li>
+                    <li onClick={() => setIsDropdownOpen(false)}>Portfolio</li>
                     </NavLink>
                     <NavLink to = '/clients'>
                     <li onClick={() => setIsDropdownOpen(false)}>Clients</li>

@@ -29,7 +29,6 @@ export default function Main() {
           `}
         >
             <h1 className="font-semibold md:text-xl text-lg mb-4">About me</h1>
-            <span className="mb-4">—</span>
             <h2 className="xl:text-4xl md:text-3xl sm:text-2xl text-[23px] font-bold sm:mb-6 mb-4 leading-10 md:leading-12">
               My name is Sumin Shrestha, <br />
               I'm a <span className="text-[#C48F56]">Photographer</span>
@@ -38,9 +37,9 @@ export default function Main() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo fugiat quisquam, perferendis nam ducimus magnam alias aperiam est natus, sapiente iure, corporis sed? Soluta error alias illum officia, repellendus esse!
             </p>
             <div className='flex flex-row  items-center rounded md:gap-20 gap-4 mb-6'>
-                <EventsElement number = '116' title = 'Personal Events' />
-                <EventsElement number = '62' title = 'Weddings Events' />
-                <EventsElement number = '180' title = 'Happy Clients' />
+                <EventsElement number = '80' title = 'Personal Events' />
+                <EventsElement number = '56' title = 'Weddings Events' />
+                <EventsElement number = '44' title = 'Social Events' />
             </div>
             <button className="group border flex justify-center items-center gap-1 w-[140px] p-2 whitespace-nowrap hover:bg-[#212121] cursor-pointer transition duration-300 ease-in-out">
               <svg

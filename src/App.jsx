@@ -7,12 +7,13 @@ import Connect from './pages/Connect'
 import About from './pages/About'
 import { Route, Routes } from 'react-router-dom'
 import Portfolio from './pages/Portfolio'
+import ScrollToTop from './components/ScrollToTop'
 
-function App() {
-
+export default function App() {
   return(
     <>
-    <Navbar /> 
+    <Navbar />
+    <ScrollToTop />
     <Routes>
       <Route path='/' element={<Main />} />
       <Route path='/portfolio/*' element={<Portfolio />} />
@@ -24,5 +25,3 @@ function App() {
   </>
   )
 }
-
-export default App
