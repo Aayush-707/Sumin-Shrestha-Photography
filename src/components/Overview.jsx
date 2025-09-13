@@ -6,6 +6,7 @@ import Share from 'yet-another-react-lightbox/plugins/share';
 import { getHomeImages } from '../../data/data.js';
 import useImageReveal from '../hooks/useOverviewImageReveal.js';
 
+
 export default function Overview() {
     const [index, setIndex] = useState(-1);
     const images = useMemo(() => getHomeImages(), []);
