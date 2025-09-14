@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form"
 import { useState} from 'react'
-import location from '../assets/location.png'
-import mobile from '../assets/mobile.png'
-import mail from '../assets/mail.png'
+import location from '../assets/logo/location.png'
+import mobile from '../assets/logo/mobile.png'
+import mail from '../assets/logo/mail.png'
 import useScrollReveal from "../hooks/useScrollReveal"
 
 

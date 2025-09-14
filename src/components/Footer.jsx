@@ -1,7 +1,7 @@
-import facebook from '../assets/facebook-mono.png'
-import instagram from '../assets/instagram.png'
-import X from '../assets/x.png'
-import logo from '../assets/Sumin-Shrestha-t-logo.png'
+import facebook from '../assets/socialMedia/facebook-mono.png'
+import instagram from '../assets/socialMedia/instagram.png'
+import X from '../assets/socialMedia/x.png'
+import logo from '../assets/logo/Sumin-Shrestha-t-logo.png'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 

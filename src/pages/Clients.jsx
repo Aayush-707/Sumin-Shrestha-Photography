@@ -1,6 +1,6 @@
 import client1 from '../assets/client-1.jpeg'
-import facebook from '../assets/facebook-mono.png'
-import instagram from '../assets/instagram.png'
+import facebook from '../assets/socialMedia/facebook-mono.png'
+import instagram from '../assets/socialMedia/instagram.png'
 import { EventsElement } from '../components/AnimatedEvents'
 import useScrollReveal from '../hooks/useScrollReveal'
 import { Link } from 'react-router-dom'
@@ -66,7 +66,6 @@ export default function Clients(){
 
             <div className='flex flex-col items-center justify-center md:my-14 my-10'>
                 <h1 className='md:text-4xl text-2xl font-bold'>Services</h1>
-                <span>----</span>
             </div>
 
             <div className='flex flex-col md:flex-row justify-center items-center gap-8'>

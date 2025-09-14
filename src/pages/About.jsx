@@ -1,10 +1,10 @@
 import about from '../assets/about-profile.jpeg'
-import lights from '../assets/studio-light.png'
-import skills from '../assets/photographer.png'
-import equipment from '../assets/camera.png'
-import vision from '../assets/photography.png'
-import passion from '../assets/photo.png'
-import result from '../assets/macro.png'
+import lights from '../assets/logo/studio-light.png'
+import skills from '../assets/logo/photographer.png'
+import equipment from '../assets/logo/camera.png'
+import vision from '../assets/logo/photography.png'
+import passion from '../assets/logo/photo.png'
+import result from '../assets/logo/macro.png'
 import useScrollReveal from '../hooks/useScrollReveal.js'
 
 const Cards = ({src, title, description}) => {
@@ -26,7 +26,7 @@ const Cards = ({src, title, description}) => {
 export default function About() {
     const [aboutRef, aboutVisible] = useScrollReveal();
     const [profileRef, profileVisible] = useScrollReveal();
-    
+
     return (
         <section className="pt-30 sm:pt-44 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-28 2xl:px-40">
             
