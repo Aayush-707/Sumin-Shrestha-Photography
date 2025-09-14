@@ -36,13 +36,13 @@ export default function About() {
                 ref={profileRef}
                 src={about} 
                 alt="about" 
-                className={`h-[50vh] sm:h-[60vh] lg:h-[70vh] 2xl:h-[75vh] object-cover rounded-md transition-all duration-700 transform 
+                className={`h-[50vh] sm:h-[60vh] lg:h-[70vh] 2xl:h-[75vh] object-cover rounded-md transition-all duration-7000 transform 
                            ${profileVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-40"}`} 
             />
                 
-                <div 
+            <div 
                 ref={aboutRef}
-                className={`bg-[#F0F0F0] p-6 sm:p-10 md:p-14 lg:p-18 transition-all duration-700 transform
+                className={`bg-[#F0F0F0] p-6 sm:p-10 md:p-14 lg:p-18 transition-all duration-7000 transform
                             ${aboutVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-40"}
                 `}>
                     <h1 className="text-xl md:text-2xl xl:text-3xl font-semibold mb-4 xl:mb-6">
@@ -50,7 +50,11 @@ export default function About() {
                         <span className="text-[#C48F56]">I'm a Photographer.</span>
                     </h1>
                     <p className="text-xs xl:text-sm leading-6 xl:leading-7 pr-0 lg:pr-4 xl:pr-12 text-gray-500">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus soluta corporis asperiores, blanditiis neque culpa odio a nisi impedit natus cupiditate suscipit perspiciatis atque ipsam quod rem minus aliquid ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio facere officiis tempore mollitia natus, inventore porro repudiandae cumque, expedita deserunt necessitatibus corporis nostrum iste voluptatibus perferendis modi eum architecto. Corrupti?
+                        My name is Sumin Shrestha, and I am a passionate photographer who believes that every picture has the power to tell a story. Through my lens, I strive to capture not just moments, but emotions, personalities, and the essence of each scene.
+                        <br />
+                        Whether it’s the intimacy of personal portraits, the joy of weddings, the energy of social events, or the breathtaking beauty of travel photography, I approach every project with creativity and attention to detail.
+                        <br />
+                        Photography, for me, is more than just an art — it’s a way of preserving memories and creating timeless connections. Each click is an opportunity to freeze a fleeting moment that can be cherished forever.
                     </p>
                 </div>
             </div>
@@ -58,9 +62,8 @@ export default function About() {
             {/* Cards section */}
             <div className="my-16 sm:my-20">
                 <h1 className="text-center lg:text-4xl md:text-3xl sm:text-2xl text-xl font-semibold">What to expect</h1>
-                <p className="text-center">——</p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center lg:gap-10 mt-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center lg:gap-10 mt-16">
                     <Cards 
                         src={lights} 
                         title="LIGHT COMPOSURE" 
@@ -74,7 +77,7 @@ export default function About() {
                     <Cards 
                         src={equipment} 
                         title="PERFECT EQUIPMENT" 
-                        description="From Cameras to studio setup, studio lighting selection, photography backdrops. We go you covered." 
+                        description="From Cameras setup to Lens setup, lighting selection, photography backdrops. We go you covered." 
                     />
                     <Cards 
                         src={passion} 

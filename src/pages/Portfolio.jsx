@@ -50,6 +50,17 @@ export default function Portfolio() {
                     </NavLink>
 
                     <NavLink 
+                        to='/portfolio/socialevents'
+                        className={({ isActive }) =>
+                            isActive 
+                                ? "text-[#C48F56] font-semibold border-b-2 lg:border-b-0 lg:border-l-3 lg:border-[#C48F56] lg:pl-3" 
+                                : "text-black hover:text-[#C48F56] lg:pl-3"
+                        }
+                    >
+                        <li className="cursor-pointer hover:font-bold">Social Events</li>
+                    </NavLink>
+
+                    <NavLink 
                         to='/portfolio/weddings'
                         className={({ isActive }) =>
                             isActive 
@@ -69,17 +80,6 @@ export default function Portfolio() {
                         }
                     >
                         <li className="cursor-pointer hover:font-bold">Travel</li>
-                    </NavLink>
-
-                    <NavLink 
-                        to='/portfolio/socialevents'
-                        className={({ isActive }) =>
-                            isActive 
-                                ? "text-[#C48F56] font-semibold border-b-2 lg:border-b-0 lg:border-l-3 lg:border-[#C48F56] lg:pl-3" 
-                                : "text-black hover:text-[#C48F56] lg:pl-3"
-                        }
-                    >
-                        <li className="cursor-pointer hover:font-bold">Social Events</li>
                     </NavLink>
                 </ul>
 

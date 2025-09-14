@@ -38,7 +38,7 @@ export default function Connect(){
                 alt={src}
                 className='lg:size-6 size-5' />
             </div>
-            <span className={`text-sm ${src === mobile ? "hover:underline cursor-pointer text-blue-500" : src === mail ? "hover:underline cursor-pointer" : "" }`}>
+            <span className={`text-sm ${src === mobile ? "underline cursor-pointer text-[#C48F56]" : src === mail ? "hover:underline cursor-pointer" : "" }`}>
                 {text}
             </span>
         </div>
@@ -78,24 +78,24 @@ export default function Connect(){
         };
 
     return(
-        <section ref={connectRef} className={`sm:pt-44 pt-30 lg:px-12 2xl:px-20 md:px-10 px-6 transition-all duration-1000 transform ${connectVisible ? "opacity-100" : "opacity-20"}`}>
+        <section ref={connectRef} className={`sm:pt-44 pt-30 lg:px-12 2xl:px-20 md:px-10 px-6 transition-all duration-7000 transform ${connectVisible ? "opacity-100" : "opacity-20"}`}>
             <h1 className="text-start md:text-2xl 2xl:text-3xl text-xl font-bold mb-4 ml-6">Contact me</h1>
             <div className="flex flex-col xl:flex-row mb-20">
                 <div className="flex flex-col lg:flex-row lg:items-center 2xl:gap-12 xl:gap-2 mb-10 xl:mb-0">
-                    <div className='lg:w-[50%] bg-[#F0F0F0] lg:text-sm text-xs p-6 text-gray-500'>
-                        <p className="mb-4 opacity-100 animate-fade-in [animation-fill-mode:forwards]">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit beatae fugiat, possimus quaerat quos omnis necessitatibus ipsum temporibus.
+                    <div className='lg:w-[50%] bg-[#F0F0F0] lg:text-sm text-xs p-6 text-gray-600 leading-5'>
+                        <p className="mb-3">
+                            I always enjoy connecting with people who value the art of photography as much as I do. Whether you are looking for someone to capture your wedding day, document an event, create personal portraits, or bring your creative project to life, I would be honored to help tell your story through my lens.
                         </p>
-                        <p className="mb-4 opacity-100 animate-fade-in [animation-fill-mode:forwards]">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eveniet possimus temporibus pariatur
+                        <p className="mb-3">
+                            Photography, to me, is more than just taking pictures — it’s about preserving emotions, details, and moments that can be cherished for years to come. Every client and every project is unique, and I dedicate time and care to ensure that the final images reflect your vision and personality.
                         </p>
-                        <p className="mb-4 opacity-100 animate-fade-in [animation-fill-mode:forwards]">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat deleniti, aliquid cupiditate distinctio, maiores, quo tenetur suscipit explicabo autem possimus earum corporis nulla voluptatum aliquam sed enim temporibus tempora veritatis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium architecto odio a possimus libero porro dicta repudiandae voluptate maxime totam repellat corporis
+                        <p className="mb-3">
+                            If you’d like to know more about my services, discuss your ideas, or simply explore how we can work together, please don’t hesitate to reach out. You can contact me through email, phone, or social media, and I’ll get back to you as soon as possible. Let’s create something meaningful together.
                         </p>
                     </div>
                     <div className='lg:w-[50%] space-y-4 mt-8 pl-6'>
                         <ContactElements src={location} text='Bhaktapur, Madhyapur Thimi'/>
-                        <ContactElements src={mobile} text='+977 9841234567'/>
+                        <ContactElements src={mobile} text='+977-9841234567'/>
                         <ContactElements src={mail} text='suminshrestha77@gmail.com'/>
                     </div>
                 </div>

@@ -4,39 +4,79 @@ export default function usePortfolioImageReveal(images = [], initialVisible = 4,
   const [visibleItems, setVisibleItems] = useState(
     images.map((_, i) => i < initialVisible)
   );
-
+  
   const imageRefs = useRef([]);
+  const observerRef = useRef(null);
+
+  useEffect(() => {
+    setVisibleItems(images.map((_, i) => i < initialVisible));
+    imageRefs.current = imageRefs.current.slice(0, images.length);
+  }, [images.length, initialVisible]);
 
   useEffect(() => {
     if (!images.length) return;
 
-    const observer = new IntersectionObserver(
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
+    observerRef.current = new IntersectionObserver(
       (entries) => {
-        setVisibleItems((prev) => {
-          const updated = [...prev];
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const index = imageRefs.current.indexOf(entry.target);
-              if (index > -1) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = imageRefs.current.findIndex(ref => ref === entry.target);
+            
+            if (index > -1) {
+              setVisibleItems((prev) => {
+                if (prev[index]) return prev;
+                
+                const updated = [...prev];
                 updated[index] = true;
-                observer.unobserve(entry.target);
-              }
+                return updated;
+              });
+              
+              observerRef.current.unobserve(entry.target);
             }
-          });
-          return updated;
+          }
         });
       },
-      { threshold }
+      { 
+        threshold,
+        rootMargin: '50px 0px'
+      }
     );
 
-    imageRefs.current.forEach((image, i) => {
-      if (image && !visibleItems[i]) {
-        observer.observe(image);
+    imageRefs.current.forEach((imageRef, i) => {
+      if (imageRef && !visibleItems[i] && i < images.length) {
+        observerRef.current.observe(imageRef);
       }
     });
 
-    return () => observer.disconnect();
-  }, [threshold, images, visibleItems]);
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [threshold, images.length]);
 
-  return { visibleItems, imageRefs };
+  useEffect(() => {
+    if (!observerRef.current) return;
+
+    imageRefs.current.forEach((imageRef, i) => {
+      if (imageRef && !visibleItems[i] && i < images.length) {
+        try {
+          observerRef.current.observe(imageRef);
+        } catch (e) {
+        }
+      }
+    });
+  }, [visibleItems, images.length]);
+
+  return { 
+    visibleItems, 
+    imageRefs,
+    setImageRef: (index) => (el) => {
+      imageRefs.current[index] = el;
+    }
+  };
 }

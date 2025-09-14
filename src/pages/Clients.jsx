@@ -3,6 +3,7 @@ import facebook from '../assets/facebook-mono.png'
 import instagram from '../assets/instagram.png'
 import { EventsElement } from '../components/AnimatedEvents'
 import useScrollReveal from '../hooks/useScrollReveal'
+import { Link } from 'react-router-dom'
 
 export default function Clients(){
     const ClientsElements = ({src, name, description}) => {
@@ -10,7 +11,7 @@ export default function Clients(){
         return(
         <div 
             ref={clientRef} 
-            className={`sm:w-md bg-[#F0F0F0] rounded transition-all duration-1000 transform ${clientVisible ? "opacity-100" : "opacity-20"}`}
+            className={`sm:w-md bg-[#F0F0F0] rounded transition-all duration-2000 transform ${clientVisible ? "opacity-100" : "opacity-20"}`}
         >
             <img src={src} alt="client-1-image" className='sm:h-[300px] w-md object-cover shadow-2xl' />
             <div className='p-4 space-y-4'>
@@ -24,21 +25,21 @@ export default function Clients(){
         </div>
     )}
 
-    const ServicesElement = ({src, title, description}) => {
+    const ServicesElement = ({src, title, description, link}) => {
         const [serviceRef, serviceVisible] = useScrollReveal()
         return(
         <div 
             ref={serviceRef} 
-            className={`sm:w-sm space-y-4 flex flex-col items-center transition-all duration-700 transform ${serviceVisible ? "opacity-100" : "opacity-20"} `}
+            className={`sm:w-sm space-y-4 flex flex-col items-center transition-all duration-1000 transform ${serviceVisible ? "opacity-100" : "opacity-20"} `}
         >
             <img src={src} alt="serv" className='sm:w-sm sm:h-[250px] h-[200px] w-[400px] object-cover rounded ' />
             <div className='text-center space-y-2'>
                 <h1 className='text-xl font-bold'>{title}</h1>
-                <p className='text-[12px] text-gray-500 leading-6'>{description}</p>
+                <p className='text-xs text-gray-500 leading-6'>{description}</p>
             </div>
-            <button className='text-sm font-semibold border px-4 py-2 hover:bg-[#212121] hover:text-white cursor-pointer transition duration-300 ease-in-out'>
+            <Link to={link} className='text-sm font-semibold border px-4 py-2 hover:bg-[#212121] hover:text-white cursor-pointer transition duration-300 ease-in-out'>
                 View more
-            </button>
+            </Link>
         </div>
     )}
 
@@ -72,12 +73,20 @@ export default function Clients(){
                 <ServicesElement 
                     src={client1} 
                     title='Personal Events' 
-                    description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda temporibus magni, repellat, quis sapiente velit, illo voluptates praesentium est architecto sed eaque odit animi enim officiis. Cum facilis ipsum minus!' 
+                    description = 'Capture the essence of your most cherished moments with our personalized event photography. From milestone celebrations to intimate gatherings, we create stunning visuals that tell your unique story. Let us preserve your memories with artistry and precision.' 
+                    link='/portfolio/personalprojects'
                 />
                 <ServicesElement 
                     src={client1} 
                     title='Wedding Events' 
-                    description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda temporibus magni, repellat, quis sapiente velit, illo voluptates praesentium est architecto sed eaque odit animi enim officiis. Cum facilis ipsum minus!' 
+                    description = 'Elevate your special day with our expert wedding photography services. We specialize in timeless portraits and candid moments, ensuring every detail of your ceremony and reception is beautifully documented. Trust us to craft your love story in pictures.'
+                    link='/portfolio/weddings' 
+                />
+                <ServicesElement 
+                    src={client1} 
+                    title='Social Events' 
+                    description = 'Make your social gatherings unforgettable with our professional photography. Whether it’s a corporate event, party, or community celebration, we deliver high-quality images that reflect the spirit of the occasion. Explore our portfolio to see the difference.'
+                    link='/portfolio/socialevents' 
                 />
             </div>
         </section>
