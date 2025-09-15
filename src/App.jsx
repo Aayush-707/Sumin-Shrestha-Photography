@@ -1,14 +1,14 @@
-import './App.css'
-import Main from './pages/Hero'
-import Footer from './components/Footer'
+import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Main from './pages/Hero'
+import Portfolio from './pages/Portfolio'
 import Clients from './pages/Clients'
 import Connect from './pages/Connect'
 import About from './pages/About'
-import { Route, Routes } from 'react-router-dom'
-import Portfolio from './pages/Portfolio'
+import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import { Toaster } from 'react-hot-toast'
+import './App.css'
 
 export default function App() {
   return(

@@ -27,7 +27,7 @@ export default function Footer() {
 
     return(
         <footer className="w-full bg-[#F2F2F2]">
-            <div className='flex justify-between items-center lg:px-50 md:px-22 sm:px-12 py-8 px-4'>
+            <div className='flex justify-between items-center lg:px-44 md:px-22 sm:px-12 py-8 px-4'>
                 <div>
                     <h1 className='sm:text-2xl text-[16px] font-bold mb-2'>Ready to work on a project</h1>
                     <p className='sm:text-xs text-[10px] text-gray-500'>Book or inquiry about your event with just one call </p>
