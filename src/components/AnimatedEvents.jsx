@@ -25,7 +25,7 @@ export const EventsElement = ({ number, title }) => {
             if (!isVisible) return
 
             let startTime = null
-            const duration = 7000
+            const duration = 4000
             const targetNumber = parseInt(number)
 
             const animate = (timestamp) => {

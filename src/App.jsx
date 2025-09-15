@@ -8,13 +8,12 @@ import About from './pages/About'
 import { Route, Routes } from 'react-router-dom'
 import Portfolio from './pages/Portfolio'
 import ScrollToTop from './components/ScrollToTop'
-import PageLoader from './components/PageLoader'
+import { Toaster } from 'react-hot-toast'
 
 export default function App() {
   return(
     <>
     <Navbar />
-    <PageLoader />
     <ScrollToTop />
     <Routes>
       <Route path='/' element={<Main />} />
@@ -23,6 +22,7 @@ export default function App() {
       <Route path='/connect' element={<Connect />} />
       <Route path='/about' element={<About />} />
     </Routes>
+    <Toaster position="bottom-right" reverseOrder={false} />
     <Footer />
   </>
   )

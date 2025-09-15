@@ -4,6 +4,7 @@ import location from '../assets/logo/location.png'
 import mobile from '../assets/logo/mobile.png'
 import mail from '../assets/logo/mail.png'
 import useScrollReveal from "../hooks/useScrollReveal"
+import toast from "react-hot-toast";
 
 
 const FormElements = ({type, id, name, autoComplete, title, placeholder, rules, register, errors}) => (
@@ -47,8 +48,6 @@ export default function Connect(){
     const onSubmit = async (data) => {
         setIsSubmitting(true)
             try {
-                console.log("Submitting form...");
-                
                 const response = await fetch('https://formspree.io/f/xvgbbbog', {
                     method: 'POST',
                     headers: {
@@ -63,22 +62,20 @@ export default function Connect(){
                 });
 
                 if (response.ok) {
-                    console.log("Form Submitted Successfully ✅");
-                    alert("Thank you! Your message has been sent.");
+                    toast.success("Thank you! Your message has been sent.");
                     reset();
                 } else {
                     throw new Error('Form submission failed');
                 }
             } catch (error) {
-                console.error("Form submission error:", error);
-                alert("Sorry, there was an error sending your message. Please try again.");
+                toast.error("Sorry, there was an error sending your message. Please try again.");
             } finally {
                 setIsSubmitting(false)
         }
         };
 
     return(
-        <section ref={connectRef} className={`sm:pt-44 pt-30 lg:px-12 2xl:px-20 md:px-10 px-6 transition-all duration-7000 transform ${connectVisible ? "opacity-100" : "opacity-20"}`}>
+        <section ref={connectRef} className={`sm:pt-44 pt-30 lg:px-12 2xl:px-20 md:px-10 px-6 transition-all duration-1000 transform ${connectVisible ? "opacity-100" : "opacity-20"}`}>
             <h1 className="text-start md:text-2xl 2xl:text-3xl text-xl font-bold mb-4 ml-6">Contact me</h1>
             <div className="flex flex-col xl:flex-row mb-20">
                 <div className="flex flex-col lg:flex-row lg:items-center 2xl:gap-12 xl:gap-2 mb-10 xl:mb-0">

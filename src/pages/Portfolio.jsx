@@ -4,6 +4,7 @@ import Travel from '../components/Travel'
 import SocialEvents from '../components/SocialEvents'
 import { Route, Routes, NavLink, Navigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
+import PageLoader from '../components/PageLoader'
 
 export default function Portfolio() {
     const location = useLocation()
@@ -94,6 +95,7 @@ export default function Portfolio() {
             </div>
 
             <div className="mt-4 lg:w-[80%] w-full">
+                <PageLoader />
                 <Routes>
                     <Route index element={<Navigate to="personalprojects" replace />} />
                     <Route path="personalprojects" element={<PersonalProjects />} />

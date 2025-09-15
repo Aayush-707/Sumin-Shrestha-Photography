@@ -36,13 +36,13 @@ export default function About() {
                 ref={profileRef}
                 src={about} 
                 alt="about" 
-                className={`h-[50vh] sm:h-[60vh] lg:h-[70vh] 2xl:h-[75vh] object-cover rounded-md transition-all duration-7000 transform 
+                className={`h-[50vh] sm:h-[60vh] lg:h-[70vh] 2xl:h-[75vh] object-cover rounded-md transition-all duration-1000 transform 
                            ${profileVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-40"}`} 
             />
                 
             <div 
                 ref={aboutRef}
-                className={`bg-[#F0F0F0] p-6 sm:p-10 md:p-14 lg:p-18 transition-all duration-7000 transform
+                className={`bg-[#F0F0F0] p-6 sm:p-10 md:p-14 lg:p-18 transition-all duration-1000 transform
                             ${aboutVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-40"}
                 `}>
                     <h1 className="text-xl md:text-2xl xl:text-3xl font-semibold mb-4 xl:mb-6">

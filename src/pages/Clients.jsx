@@ -11,12 +11,12 @@ export default function Clients(){
         return(
         <div 
             ref={clientRef} 
-            className={`sm:w-md bg-[#F0F0F0] rounded transition-all duration-2000 transform ${clientVisible ? "opacity-100" : "opacity-20"}`}
+            className={`sm:w-md bg-[#F0F0F0] rounded transition-all duration-1000 transform ${clientVisible ? "opacity-100" : "opacity-20"}`}
         >
             <img src={src} alt="client-1-image" className='sm:h-[300px] w-md object-cover shadow-2xl' />
             <div className='p-4 space-y-4'>
                 <h1 className='text-xl font-bold'>{name}</h1>
-                <p className='text-[12px] text-gray-500 leading-6 '>{description}</p>
+                <p className='text-xs text-gray-500 leading-6 '>{description}</p>
                 <div className='flex justify-end gap-2'>
                     <img src={facebook} alt="facebook-logo" className='sm:w-6 sm:h-6 w-5 h-5 cursor-pointer hover:scale-110 transition' />
                     <img src={instagram} alt="instagram-logo" className='sm:w-6 sm:h-6 w-5 h-5 cursor-pointer hover:scale-110 transition' />
