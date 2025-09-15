@@ -3,12 +3,30 @@ import ImageSlider from '../components/ImageSlider.jsx';
 import useScrollReveal from '../hooks/useScrollReveal.js';
 import Overview from '../components/Overview.jsx';
 import { EventsElement } from '../components/AnimatedEvents.jsx';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function Main() {
   const [aboutRef, aboutVisible] = useScrollReveal();
   const [profileRef, profileVisible] = useScrollReveal();
   const [copied, setCopied] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#overview') {
+      const timer = setTimeout(() => {
+        const overviewElement = document.getElementById('overview');
+        if (overviewElement) {
+          overviewElement.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }, 100);
+
+      return () => clearTimeout(timer);
+    }
+  }, [location.hash]);
 
   const handleCopy = async () => {
     try {

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import facebook from '../assets/socialMedia/facebook-mono.png'
 import instagram from '../assets/socialMedia/instagram.png'
 import X from '../assets/socialMedia/x.png'
@@ -7,9 +7,26 @@ import logo from '../assets/logo/Sumin-Shrestha-t-logo.png'
 
 export default function Navbar() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
+    };
+
+    const handleOverviewClick = (e) => {
+        e.preventDefault();
+        if (location.pathname === '/') {
+            const overviewElement = document.getElementById('overview');
+            if (overviewElement) {
+                overviewElement.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        } else {
+            navigate('/#overview');
+        }
     };
 
     const SocialMediaIcons = ({ className }) => (
@@ -51,7 +68,11 @@ export default function Navbar() {
                     >
                         <li>Home</li>
                     </NavLink>
-                    <a href="#overview" className='hover:text-[#C48F56] text-black'>
+                    <a 
+                        href="#overview" 
+                        onClick={handleOverviewClick}
+                        className='hover:text-[#C48F56] text-black cursor-pointer'
+                    >
                         <li>Overview</li>
                     </a>
                     <NavLink to = '/portfolio'
@@ -119,8 +140,14 @@ export default function Navbar() {
                     <NavLink to = '/'>
                     <li onClick={() => setIsDropdownOpen(false)}>Home</li>
                     </NavLink>
-                    <a href = '#overview'>
-                    <li onClick={() => setIsDropdownOpen(false)}>Overview</li>
+                    <a 
+                        href="#overview" 
+                        onClick={(e) => {
+                            handleOverviewClick(e);
+                            setIsDropdownOpen(false);
+                        }}
+                    >
+                        <li>Overview</li>
                     </a>
                     <NavLink to = '/portfolio'>
                     <li onClick={() => setIsDropdownOpen(false)}>Portfolio</li>

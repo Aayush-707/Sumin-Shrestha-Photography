@@ -2,11 +2,28 @@ import facebook from '../assets/socialMedia/facebook-mono.png'
 import instagram from '../assets/socialMedia/instagram.png'
 import X from '../assets/socialMedia/x.png'
 import logo from '../assets/logo/Sumin-Shrestha-t-logo.png'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 
 export default function Footer() {
     const [copied, setCopied] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleOverviewClick = (e) => {
+        e.preventDefault();
+        if (location.pathname === '/') {
+            const overviewElement = document.getElementById('overview');
+            if (overviewElement) {
+                overviewElement.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        } else {
+            navigate('/#overview');
+        }
+    };
 
     const handleCopy = async () => {
         try {
@@ -76,8 +93,11 @@ export default function Footer() {
                             <NavLink to = "/">
                             <li>Home</li>
                             </NavLink>
-                            <a href="#overview">
-                            <li>Overview</li>
+                            <a 
+                                href="#overview" 
+                                onClick={handleOverviewClick}
+                            >
+                                <li>Overview</li>
                             </a>
                             <NavLink to = "/portfolio">
                             <li>Portfolio</li>
