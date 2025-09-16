@@ -1,6 +1,6 @@
 import facebook from '../assets/socialMedia/facebook-mono.png'
 import instagram from '../assets/socialMedia/instagram.png'
-import X from '../assets/socialMedia/x.png'
+import X from '../assets/socialMedia/X.png'
 import logo from '../assets/logo/Sumin-Shrestha-t-logo.png'
 import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import { useState } from 'react'
