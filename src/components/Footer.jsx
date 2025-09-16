@@ -113,10 +113,16 @@ export default function Footer() {
                             </NavLink>
                         </ul>
                     </div>
-                    <div>
-                        <h1 className='sm:text-2xl text-xl font-semibold mb-4'>Contact</h1>
-                        <p className='sm:text-sm text-xs mb-2 space-x-1'><strong>Phone :</strong><span className=' hover:cursor-pointer hover:text-[#C48F56] hover:underline'>+977-9812345678</span></p>
-                        <p className='sm:text-sm text-xs whitespace-nowrap space-x-1'><strong>Email :</strong><span className=' hover:cursor-pointer hover:text-[#C48F56] hover:underline'>suminshrestha777@gmail.com</span></p>
+                    <div className='space-y-4'>
+                        <h1 className='sm:text-2xl text-xl font-semibold'>Contact</h1>
+                        <div className='flex flex-col md:flex-row md:items-center gap-2'>
+                            <h2 className='text-sm md:text-sm font-bold'>Phone :</h2>
+                            <p className='text-xs md:sm hover:text-[#C48F56] hover:underline'>+977-9818123456</p>
+                        </div>
+                        <div className='flex flex-col md:flex-row md:items-center gap-2'>
+                            <h2 className='text-sm md:text-sm font-bold'>Email :</h2>
+                            <p className='text-xs md:sm hover:text-[#C48F56] hover:underline'>suminshrestha777@gmail.com</p>
+                        </div>
                     </div>
                 </div>
             </div>
