@@ -1,4 +1,5 @@
 import client1 from '../assets/client-1.jpeg'
+import michaelGrills from '../assets/clients/Client-1.jpg'
 import facebook from '../assets/socialMedia/facebook-mono.png'
 import instagram from '../assets/socialMedia/instagram.png'
 import { EventsElement } from '../components/AnimatedEvents'
@@ -6,20 +7,20 @@ import useScrollReveal from '../hooks/useScrollReveal'
 import { Link } from 'react-router-dom'
 
 export default function Clients(){
-    const ClientsElements = ({src, name, description}) => {
+    const ClientsElements = ({src, name, description, facebookLink, instagramLink}) => {
         const [clientRef, clientVisible] = useScrollReveal()
         return(
         <div 
             ref={clientRef} 
-            className={`sm:w-md bg-[#F0F0F0] rounded transition-all duration-1000 transform ${clientVisible ? "opacity-100" : "opacity-20"}`}
+            className={`sm:w-md bg-[#F0F0F0] h-[520px] rounded relative transition-all duration-1000 transform ${clientVisible ? "opacity-100" : "opacity-20"}`}
         >
-            <img src={src} alt="client-1-image" className='sm:h-[300px] w-md object-cover shadow-2xl' />
+            <img src={src} alt="client-1-image" className='sm:h-[300px] w-md object-cover rounded shadow-2xl' />
             <div className='p-4 space-y-4'>
                 <h1 className='text-xl font-bold'>{name}</h1>
                 <p className='text-xs text-gray-500 leading-6 '>{description}</p>
-                <div className='flex justify-end gap-2'>
-                    <img src={facebook} alt="facebook-logo" className='sm:w-6 sm:h-6 w-5 h-5 cursor-pointer hover:scale-110 transition' />
-                    <img src={instagram} alt="instagram-logo" className='sm:w-6 sm:h-6 w-5 h-5 cursor-pointer hover:scale-110 transition' />
+                <div className='flex justify-end gap-2 absolute bottom-4 right-4'>
+                    <a href={facebookLink} target='_blank'><img src={facebook} alt="facebook-logo" className='sm:w-6 sm:h-6 w-5 h-5 cursor-pointer hover:scale-110 transition' /></a>
+                    <a href={instagramLink} target='_blank'><img src={instagram} alt="instagram-logo" className='sm:w-6 sm:h-6 w-5 h-5 cursor-pointer hover:scale-110 transition' /></a>
                 </div>
             </div>
         </div>
@@ -47,9 +48,11 @@ export default function Clients(){
         <section className='pt-30 sm:pt-44 mb-20 px-4 md:px-8 lg:px-14 xl:px-20 2xl:px-30'>
             <div className='flex flex-col lg:flex-row items-center justify-center gap-8'>
                 <ClientsElements 
-                    src = {client1} 
-                    name = 'Name of Client-1' 
-                    description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quos blanditiis repudiandae quo dolore perspiciatis debitis nobis pariatur molestias, ea porro suscipit saepe odio. Nihil veniam molestias quibusdam maxime nobis.' 
+                    src = {michaelGrills} 
+                    name = 'Michael grills Pepsicola ' 
+                    description = 'Michael Grills offer the most authentic and juiciest sekuwa in town that is packed with Michael grills secret herbs and spices. Indulge yourself in the deliciousness of sittans and drinks.'
+                    facebookLink = 'https://www.facebook.com/michaelgrillspepsi'
+                    instagramLink = 'https://www.instagram.com/michael_grills_pepsicola?utm_source=ig_web_button_share_sheet&igsh=eW45cGVrYjYydHNz' 
                 />
                 <ClientsElements 
                     src = {client1} 

@@ -38,7 +38,7 @@ export default function Navbar() {
                     className='sm:w-6 sm:h-6 w-4 h-4 cursor-pointer hover:scale-110 transition' 
                 />
             </a>
-            <a href="" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/sumin__shrestha?utm_source=ig_web_button_share_sheet&igsh=eTd5emh3Y2E4dW96" target="_blank" rel="noopener noreferrer">
                 <img 
                     src={instagram} 
                     alt="Instagram" 
@@ -84,7 +84,7 @@ export default function Navbar() {
                     </NavLink> 
                 </ul>
 
-                <div className='flex-1 flex justify-center lg:justify-center ml-12 lg:ml-0' >
+                <div className='flex-1 flex justify-center ml-12 lg:ml-0' >
                     <NavLink to = '/'>
                         <img 
                             src={logo} 
@@ -92,7 +92,6 @@ export default function Navbar() {
                             className='h-14 sm:h-18 md:h-20 lg:h-22 xl:h-28 w-auto object-contain'
                         />
                     </NavLink>
-                    
                 </div>
 
                 <ul className='hidden lg:flex gap-8 text-lg italic pr-20 xl:pr-30 *:hover:font-bold'>
