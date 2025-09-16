@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import facebook from '../assets/socialMedia/facebook-mono.png'
 import instagram from '../assets/socialMedia/instagram.png'
-import X from '../assets/socialMedia/x.png'
+import xIcon from '../assets/socialMedia/x.png'
 import logo from '../assets/logo/Sumin-Shrestha-t-logo.png'
 
 export default function Navbar() {
@@ -47,7 +47,7 @@ export default function Navbar() {
             </a>
             <a href="" target="_blank" rel="noopener noreferrer">
                 <img 
-                    src={X} 
+                    src={xIcon} 
                     alt="X" 
                     className='sm:w-6 sm:h-6 w-4 h-4 cursor-pointer hover:scale-110 transition' 
                 />
