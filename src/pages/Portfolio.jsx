@@ -36,7 +36,7 @@ export default function Portfolio() {
     const currentSection = sectionContent[location.pathname] || sectionContent['/portfolio/personalprojects']
 
     return (
-        <section className="lg:pt-44 pt-28 px-10 mb-8 flex lg:flex-row flex-col gap-4">
+        <section className="lg:pt-44 sm:pt-24 pt-16 md:px-10 px-4 mb-8 flex lg:flex-row flex-col gap-4">
             <div className="lg:w-[20%] w-full flex-col lg:sticky lg:top-28 self-start p-4 space-y-10 mt-10 lg:h-[80vh]">
                 <ul className="flex lg:flex-col flex-row justify-center gap-4 text-xs whitespace-nowrap sm:text-sm lg-[16px]">
                     <NavLink 

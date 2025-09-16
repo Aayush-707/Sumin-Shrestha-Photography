@@ -1,14 +1,14 @@
 import usePortfolioImageReveal from "../hooks/usePortfolioImageReveal";
 
 export default function ImageGrid({ images = [], onClick }) {
-  const { visibleItems, setImageRef } = usePortfolioImageReveal(images, 6, 0.2);
+  const { visibleItems, imageRefs } = usePortfolioImageReveal(images, 6, 0.2);
 
   return (
     <div className="lg:columns-5 md:columns-4 sm:columns-2 columns-1 gap-2 [&>img:not(:first-child)]:mt-2">
       {images.map((item, i) => (
         <img
           key={`${item.src}-${i}`}
-          ref={setImageRef(i)}
+          ref={(el) => { imageRefs.current[i] = el; }}
           loading="lazy"
           src={visibleItems[i] ? item.src : null}
           alt={item.alt}

@@ -35,21 +35,21 @@ export default function Navbar() {
                 <img 
                     src={facebook} 
                     alt="Facebook" 
-                    className='sm:w-6 sm:h-6 w-4 h-4 cursor-pointer hover:scale-110 transition' 
+                    className='sm:size-6 size-5 cursor-pointer hover:scale-110 transition' 
                 />
             </a>
             <a href="https://www.instagram.com/sumin__shrestha?utm_source=ig_web_button_share_sheet&igsh=eTd5emh3Y2E4dW96" target="_blank" rel="noopener noreferrer">
                 <img 
                     src={instagram} 
                     alt="Instagram" 
-                    className='sm:w-6 sm:h-6 w-4 h-4 cursor-pointer hover:scale-110 transition' 
+                    className='sm:size-6 size-5 cursor-pointer hover:scale-110 transition' 
                 />
             </a>
             <a href="" target="_blank" rel="noopener noreferrer">
                 <img 
                     src={xIcon} 
                     alt="X" 
-                    className='sm:w-6 sm:h-6 w-4 h-4 cursor-pointer hover:scale-110 transition' 
+                    className='sm:size-6 size-5 cursor-pointer hover:scale-110 transition' 
                 />
             </a>
         </div>
@@ -89,7 +89,7 @@ export default function Navbar() {
                         <img 
                             src={logo} 
                             alt="Logo"
-                            className='h-14 sm:h-18 md:h-20 lg:h-22 xl:h-28 w-auto object-contain'
+                            className='h-16 sm:h-18 md:h-20 lg:h-22 xl:h-28 w-auto object-contain'
                         />
                     </NavLink>
                 </div>

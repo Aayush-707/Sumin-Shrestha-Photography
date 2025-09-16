@@ -6,7 +6,6 @@ import mail from '../assets/logo/mail.png'
 import useScrollReveal from "../hooks/useScrollReveal"
 import toast from "react-hot-toast";
 
-
 const FormElements = ({type, id, name, autoComplete, title, placeholder, rules, register, errors}) => (
     <div className="flex flex-col">
         <label htmlFor={id} className='text-sm mb-1'>
@@ -75,19 +74,30 @@ export default function Connect(){
         };
 
     return(
-        <section ref={connectRef} className={`sm:pt-44 pt-30 lg:px-12 2xl:px-20 md:px-10 px-6 transition-all duration-1000 transform ${connectVisible ? "opacity-100" : "opacity-20"}`}>
-            <h1 className="text-start md:text-2xl 2xl:text-3xl text-xl font-bold mb-4 ml-6">Contact me</h1>
+        <section ref={connectRef} className={`sm:pt-44 pt-30 lg:px-12 2xl:px-20 md:px-10 px-6 transition-all duration-1000 ease-out transform ${
+            connectVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}>
+            <h1 className={`text-start md:text-2xl 2xl:text-3xl text-xl font-bold mb-4 ml-6 transition-all duration-1200 ease-out transform ${
+                connectVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`} 
+            style={{ transitionDelay: connectVisible ? '200ms' : '0ms' }}>
+                Contact me
+            </h1>
+            
             <div className="flex flex-col xl:flex-row mb-20">
-                <div className="flex flex-col lg:flex-row lg:items-center 2xl:gap-12 xl:gap-2 mb-10 xl:mb-0">
+                <div className={`flex flex-col lg:flex-row lg:items-center 2xl:gap-12 xl:gap-2 mb-10 xl:mb-0 transition-all duration-1000 ease-out transform ${
+                    connectVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"
+                }`}
+                style={{ transitionDelay: connectVisible ? '400ms' : '0ms' }}>
                     <div className='lg:w-[50%] bg-[#F0F0F0] lg:text-sm text-xs p-6 text-gray-600 leading-5'>
                         <p className="mb-3">
                             I always enjoy connecting with people who value the art of photography as much as I do. Whether you are looking for someone to capture your wedding day, document an event, create personal portraits, or bring your creative project to life, I would be honored to help tell your story through my lens.
                         </p>
                         <p className="mb-3">
-                            Photography, to me, is more than just taking pictures — it’s about preserving emotions, details, and moments that can be cherished for years to come. Every client and every project is unique, and I dedicate time and care to ensure that the final images reflect your vision and personality.
+                            Photography, to me, is more than just taking pictures — it's about preserving emotions, details, and moments that can be cherished for years to come. Every client and every project is unique, and I dedicate time and care to ensure that the final images reflect your vision and personality.
                         </p>
                         <p className="mb-3">
-                            If you’d like to know more about my services, discuss your ideas, or simply explore how we can work together, please don’t hesitate to reach out. You can contact me through email, phone, or social media, and I’ll get back to you as soon as possible. Let’s create something meaningful together.
+                            If you'd like to know more about my services, discuss your ideas, or simply explore how we can work together, please don't hesitate to reach out. You can contact me through email, phone, or social media, and I'll get back to you as soon as possible. Let's create something meaningful together.
                         </p>
                     </div>
                     <div className='lg:w-[50%] space-y-4 mt-8 pl-6'>
@@ -97,7 +107,10 @@ export default function Connect(){
                     </div>
                 </div>
 
-                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-6">
+                <form onSubmit={handleSubmit(onSubmit)} className={`flex flex-col p-6 transition-all duration-1000 ease-out transform ${
+                    connectVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6"
+                }`}
+                style={{ transitionDelay: connectVisible ? '600ms' : '0ms' }}>
                     <h2 className='text-sm font-semibold mb-8'>Get in touch with me if you have any queries and I will get back to you as soon as possible.</h2>
                     <fieldset className="space-y-4" disabled = {isSubmitting}>
                         <FormElements

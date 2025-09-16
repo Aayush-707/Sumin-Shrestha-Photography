@@ -8,6 +8,7 @@ export default function usePortfolioImageReveal(images = [], initialVisible = 4,
   const imageRefs = useRef([]);
   const observerRef = useRef(null);
 
+  // Reset visibility when images or initialVisible changes
   useEffect(() => {
     setVisibleItems(images.map((_, i) => i < initialVisible));
     imageRefs.current = imageRefs.current.slice(0, images.length);
@@ -16,36 +17,37 @@ export default function usePortfolioImageReveal(images = [], initialVisible = 4,
   useEffect(() => {
     if (!images.length) return;
 
+    // Clean up existing observer
     if (observerRef.current) {
       observerRef.current.disconnect();
     }
 
+    // Create new observer
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = imageRefs.current.findIndex(ref => ref === entry.target);
+            const index = imageRefs.current.findIndex((ref) => ref === entry.target);
             
             if (index > -1) {
               setVisibleItems((prev) => {
-                if (prev[index]) return prev;
+                if (prev[index]) return prev; // Already visible, no update needed
                 
                 const updated = [...prev];
                 updated[index] = true;
                 return updated;
               });
               
+              // Stop observing once visible for performance
               observerRef.current.unobserve(entry.target);
             }
           }
         });
       },
-      { 
-        threshold,
-        rootMargin: '50px 0px'
-      }
+      { threshold }
     );
 
+    // Observe only invisible images
     imageRefs.current.forEach((imageRef, i) => {
       if (imageRef && !visibleItems[i] && i < images.length) {
         observerRef.current.observe(imageRef);
@@ -57,26 +59,10 @@ export default function usePortfolioImageReveal(images = [], initialVisible = 4,
         observerRef.current.disconnect();
       }
     };
-  }, [threshold, images.length]);
-
-  useEffect(() => {
-    if (!observerRef.current) return;
-
-    imageRefs.current.forEach((imageRef, i) => {
-      if (imageRef && !visibleItems[i] && i < images.length) {
-        try {
-          observerRef.current.observe(imageRef);
-        } catch (e) {
-        }
-      }
-    });
-  }, [visibleItems, images.length]);
+  }, [threshold, images.length, visibleItems]);
 
   return { 
     visibleItems, 
-    imageRefs,
-    setImageRef: (index) => (el) => {
-      imageRefs.current[index] = el;
-    }
+    imageRefs
   };
 }

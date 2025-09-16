@@ -44,9 +44,9 @@ export default function Footer() {
 
     return(
         <footer className="w-full bg-[#F2F2F2]">
-            <div className='flex justify-between items-center lg:px-44 md:px-22 sm:px-12 py-8 px-4'>
+            <div className='flex justify-between items-center gap-2 lg:px-44 md:px-22 sm:px-12 py-8 px-4'>
                 <div>
-                    <h1 className='sm:text-2xl text-[16px] font-bold mb-2'>Ready to work on a project</h1>
+                    <h1 className='md:text-2xl sm:text-xl text-[15px] font-bold mb-2'>Ready to work on a project</h1>
                     <p className='sm:text-xs text-[10px] text-gray-500'>Book or inquiry about your event with just one call </p>
                 </div>
                 <button onClick={handleCopy} className="group border flex justify-center items-center gap-1 sm:w-[140px] w-[100px] p-2 whitespace-nowrap hover:bg-[#212121] cursor-pointer transition duration-300 ease-in-out">
@@ -61,10 +61,9 @@ export default function Footer() {
                 </button>
             </div>
 
-            <div 
-            className="flex gap-2 p-4 justify-center items-center shadow-2xl/20 bg-[#E8E8E8] mb-4 ">
+            <div className="flex gap-2 p-4 justify-center items-center shadow-2xl/20 bg-[#E8E8E8] mb-4 ">
                 <a href="https://www.facebook.com/sumin.shrestha.620514" target='_blank'>
-                <SocialMedia name='Facebook' src={facebook}/>
+                    <SocialMedia name='Facebook' src={facebook}/>
                 </a>
                 <span className='font-bold'>•</span>
                 <a href="https://www.instagram.com/sumin__shrestha?utm_source=ig_web_button_share_sheet&igsh=eTd5emh3Y2E4dW96" target='_blank'>
@@ -77,16 +76,17 @@ export default function Footer() {
             </div>
 
             <div className='flex p-4 mb-2'>
-                <div className='lg:flex justify-center items-center w-[50%] hidden'>
-                    <img src={logo} alt="logo" className='h-26' />
-                    <div>
+                <div className='md:flex justify-center items-center xl:w-[50%] lg:w-[30%] md:w-[26%]'>
+                    <img src={logo} alt="logo" className='xl:h-26 hidden md:block' />
+                    <div className=' hidden xl:block'>
                         <h1 className='text-2xl font-semibold mb-2 '>Sumin Shrestha</h1>
                         <p className='text-xs text-gray-500 leading-6'>
                             I’m a photographer with a passion for capturing authentic stories through my lens. From intimate portraits to grand celebrations, I focus on the details that make each moment unforgettable. Whether it’s weddings, events, or travel, my goal is to create timeless images that speak to emotion, beauty, and connection.
                         </p>
                     </div>
                 </div>
-                <div className='w-[50%] flex md:gap-20 sm:gap-12 gap-6 lg:ml-30 sm:ml-20'>
+
+                <div className='w-[50%] flex md:gap-10 sm:gap-12 gap-6 lg:ml-30 sm:ml-10'>
                     <div>
                         <h1 className='sm:text-2xl text-xl font-semibold mb-4 whitespace-nowrap'>Quick links</h1>
                         <ul className='list-disc ml-6 leading-6 sm:text-sm text-xs *:hover:font-bold '>
@@ -113,15 +113,16 @@ export default function Footer() {
                             </NavLink>
                         </ul>
                     </div>
+
                     <div className='space-y-4'>
                         <h1 className='sm:text-2xl text-xl font-semibold'>Contact</h1>
-                        <div className='flex flex-col md:flex-row md:items-center gap-2'>
-                            <h2 className='text-sm md:text-sm font-bold'>Phone :</h2>
-                            <p className='text-xs md:sm hover:text-[#C48F56] hover:underline'>+977-9818123456</p>
+                        <div className='flex flex-col sm:flex-row sm:items-center sm:whitespace-nowrap gap-2'>
+                            <h2 className='text-sm sm:text-sm font-bold'>Phone :</h2>
+                            <p className='text-xs sm:text-sm hover:text-[#C48F56] hover:underline'>+977-9818123456</p>
                         </div>
-                        <div className='flex flex-col md:flex-row md:items-center gap-2'>
-                            <h2 className='text-sm md:text-sm font-bold'>Email :</h2>
-                            <p className='text-xs md:sm hover:text-[#C48F56] hover:underline'>suminshrestha777@gmail.com</p>
+                        <div className='flex flex-col sm:flex-row sm:items-center sm:whitespace-nowrap gap-2'>
+                            <h2 className='text-sm sm:text-sm font-bold'>Email :</h2>
+                            <p className='text-xs sm:text-sm hover:text-[#C48F56] hover:underline'>suminshrestha777@gmail.com</p>
                         </div>
                     </div>
                 </div>

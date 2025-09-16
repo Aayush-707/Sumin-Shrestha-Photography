@@ -15,7 +15,7 @@ export default function Overview() {
         <section id="overview" className="md:mt-40 mt-20">
             <div className="lg:px-10 sm:px-6 px-3">
                 <div className="flex flex-col justify-center items-center mb-10">
-                    <h1 className="font-semibold lg:text-4xl md:text-3xl sm:text-2xl xl mb-2">Overview</h1>
+                    <h1 className="font-semibold lg:text-4xl md:text-3xl text-2xl mb-2">Overview</h1>
                 </div>
                 <div className="lg:columns-5 md:columns-4 sm:columns-2 columns-1 gap-2 [&>img:not(:first-child)]:mt-2">
                     {images.map((item, i) => (
