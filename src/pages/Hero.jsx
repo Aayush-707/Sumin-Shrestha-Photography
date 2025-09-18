@@ -72,7 +72,7 @@ export default function Main() {
                 <EventsElement number = '56' title = 'Weddings Events' />
                 <EventsElement number = '44' title = 'Social Events' />
             </div>
-            <button onClick={handleCopy} className="group border-2 flex justify-center items-center gap-1 w-[140px] p-2 whitespace-nowrap hover:bg-[#212121] cursor-pointer transition duration-300 ease-in-out">
+            <button onClick={handleCopy} className="group border-2 border-gray-500 rounded flex justify-center items-center gap-1 w-[140px] p-2 whitespace-nowrap hover:bg-[#212121] cursor-pointer transition duration-300 ease-in-out">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

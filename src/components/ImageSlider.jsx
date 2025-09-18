@@ -27,7 +27,7 @@ export default function ImageSlider() {
   };
 
   return (
-    <div className="relative w-full md:h-screen h-[400px] overflow-hidden shadow-2xl/50">
+    <div className="relative w-full md:h-screen h-[480px] overflow-hidden shadow-2xl/50">
       <div
         className="w-full h-full bg-cover bg-center transition-all duration-1000 ease-in-out"
         style={{ backgroundImage: `url(${images[currentIndex]})` }}

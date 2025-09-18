@@ -44,7 +44,7 @@ export default function Portfolio() {
     return (
         <section className="lg:pt-44 sm:pt-24 pt-16 md:px-10 px-4 mb-8 flex lg:flex-row flex-col gap-4">
             <div className="lg:w-[20%] w-full flex-col lg:sticky lg:top-28 self-start p-4 space-y-10 mt-10 lg:h-[80vh]">
-                <ul className="flex lg:flex-col flex-row justify-center gap-4 text-xs whitespace-nowrap sm:text-sm lg-[16px]">
+                <ul className="flex lg:flex-col flex-row sm:justify-center overflow-x-auto lg:overflow-visible whitespace-nowrap gap-4 text-sm lg:text-[16px] px-2 scrollbar-hide">
                     <NavLink 
                         to='/portfolio/personalprojects'
                         className={({ isActive }) =>
@@ -64,7 +64,7 @@ export default function Portfolio() {
                                 : "text-black hover:text-[#C48F56] lg:pl-3"
                         } 
                     >
-                        <li className="cursor-pointer hover:font-bold">Cultural Projects</li>
+                        <li className="cursor-pointer hover:font-bold">Cultural Events</li>
                     </NavLink>
 
                     <NavLink 

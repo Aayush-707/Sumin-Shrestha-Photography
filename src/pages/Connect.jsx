@@ -74,7 +74,7 @@ export default function Connect(){
         };
 
     return(
-        <section ref={connectRef} className={`sm:pt-44 pt-30 lg:px-12 2xl:px-20 md:px-10 px-6 transition-all duration-1000 ease-out transform ${
+        <section ref={connectRef} className={`sm:pt-44 pt-30 lg:px-12 2xl:px-20 md:px-10 px-0 transition-all duration-1000 ease-out transform ${
             connectVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}>
             <h1 className={`text-start md:text-2xl 2xl:text-3xl text-xl font-bold mb-4 ml-6 transition-all duration-1200 ease-out transform ${
@@ -84,7 +84,7 @@ export default function Connect(){
                 Contact me
             </h1>
             
-            <div className="flex flex-col xl:flex-row mb-20">
+            <div className="flex flex-col xl:flex-row lg:mb-20 mb-2">
                 <div className={`flex flex-col lg:flex-row lg:items-center 2xl:gap-12 xl:gap-2 mb-10 xl:mb-0 transition-all duration-1000 ease-out transform ${
                     connectVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-6"
                 }`}
@@ -178,7 +178,7 @@ export default function Connect(){
                     <div className="flex mt-4">
                         <button type="submit"
                         disabled = {isSubmitting} 
-                        className="group border-2 py-2 px-4 text-md flex items-center gap-2 hover:bg-black cursor-pointer transition duration-300 ease-in-out">
+                        className="group border-2 border-gray-500 rounded py-2 px-4 text-md flex items-center gap-2 hover:bg-black cursor-pointer transition duration-300 ease-in-out">
                             <span className={`text-sm ${isSubmitting ? 'text-gray-500' : 'text-black group-hover:text-white'}`}>
                                         {isSubmitting ? 'Sending...' : 'Send Message'}
                             </span>                            

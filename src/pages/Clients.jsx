@@ -76,7 +76,7 @@ export default function Clients() {
                 </div>
                 <Link
                     to={link}
-                    className='text-sm font-semibold border-2 px-4 py-2 hover:bg-[#212121] hover:text-white cursor-pointer transition duration-300 ease-in-out'
+                    className='text-sm font-semibold border-2 border-gray-500 rounded px-4 py-2 hover:bg-[#212121] hover:text-white cursor-pointer transition duration-300 ease-in-out'
                 >
                     View more
                 </Link>

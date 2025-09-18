@@ -49,7 +49,7 @@ export default function Footer() {
                     <h1 className='md:text-2xl sm:text-xl text-[15px] font-bold mb-2'>Ready to work on a project</h1>
                     <p className='sm:text-xs text-[10px] text-gray-500'>Book or inquiry about your event with just one call </p>
                 </div>
-                <button onClick={handleCopy} className="group border-2 flex justify-center items-center gap-1 sm:w-[140px] w-[100px] p-2 whitespace-nowrap hover:bg-[#212121] cursor-pointer transition duration-300 ease-in-out">
+                <button onClick={handleCopy} className="group border-2 border-gray-500 rounded flex justify-center items-center gap-1 sm:w-[140px] w-[100px] p-2 whitespace-nowrap hover:bg-[#212121] cursor-pointer transition duration-300 ease-in-out">
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

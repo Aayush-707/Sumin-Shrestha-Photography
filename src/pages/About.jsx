@@ -69,7 +69,7 @@ export default function About() {
             </div>
 
             {/* Cards section */}
-            <div className="my-16 sm:my-20">
+            <div className="my-16 sm:my-20 mb-2">
                 <h1 
                 ref={titleRef}
                 className={`text-center lg:text-4xl md:text-3xl sm:text-2xl text-xl font-semibold transition-all duration-1000 ease-out transform ${
