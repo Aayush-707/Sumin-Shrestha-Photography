@@ -178,7 +178,7 @@ export default function Connect(){
                     <div className="flex mt-4">
                         <button type="submit"
                         disabled = {isSubmitting} 
-                        className="group border py-2 px-4 text-md flex items-center gap-2 hover:bg-black cursor-pointer transition duration-300 ease-in-out">
+                        className="group border-2 py-2 px-4 text-md flex items-center gap-2 hover:bg-black cursor-pointer transition duration-300 ease-in-out">
                             <span className={`text-sm ${isSubmitting ? 'text-gray-500' : 'text-black group-hover:text-white'}`}>
                                         {isSubmitting ? 'Sending...' : 'Send Message'}
                             </span>                            

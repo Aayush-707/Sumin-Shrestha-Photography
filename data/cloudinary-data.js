@@ -92,12 +92,36 @@ export const PersonalProjectsImages = [
     { src: `${CLOUDINARY_BASE_URL}/PersonalProjects_20.jpg`, alt: 'img20' },
 ];
 
+export const CulturalEventsImages = [
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_1.jpg`, alt: 'img1' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_2.jpg`, alt: 'img2' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_3.jpg`, alt: 'img3' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_4.jpg`, alt: 'img4' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_5.jpg`, alt: 'img5' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_6.jpg`, alt: 'img6' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_7.jpg`, alt: 'img7' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_8.jpg`, alt: 'img8' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_9.jpg`, alt: 'img9' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_10.jpg`, alt: 'img10' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_11.jpg`, alt: 'img11' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_12.jpg`, alt: 'img12' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_13.jpg`, alt: 'img13' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_14.jpg`, alt: 'img14' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_15.jpg`, alt: 'img15' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_16.jpg`, alt: 'img16' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_17.jpg`, alt: 'img17' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_18.jpg`, alt: 'img18' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_19.jpg`, alt: 'img19' },
+    { src: `${CLOUDINARY_BASE_URL}/CulturalEvents_20.jpg`, alt: 'img20' },
+];
+
 export function getHomeImages() {
     const allImages = [
         ...TravelImages,
         ...SocialEventsImages,
         ...WeddingImages,
         ...PersonalProjectsImages,
+        ...CulturalEventsImages,
     ];
 
     for (let i = allImages.length - 1; i > 0; i--) {
@@ -105,7 +129,7 @@ export function getHomeImages() {
         [allImages[i], allImages[j]] = [allImages[j], allImages[i]];
     }
 
-    return allImages.slice(0, 50).map((image, index) => ({
+    return allImages.slice(0, 70).map((image, index) => ({
         src: image.src,
         alt: `img${index + 1}`,
     }));

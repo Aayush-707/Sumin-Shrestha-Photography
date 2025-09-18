@@ -2,6 +2,7 @@ import PersonalProjects from '../components/PersonalProjects'
 import Weddings from '../components/Weddings'
 import Travel from '../components/Travel'
 import SocialEvents from '../components/SocialEvents'
+import CulturalEvents from '../components/CulturalEvents'
 import { Route, Routes, NavLink, Navigate } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import PageLoader from '../components/PageLoader'
@@ -29,7 +30,12 @@ export default function Portfolio() {
             title: 'Social Events',
             description: 'Bringing corporate events, parties, and social gatherings to life through dynamic photography that captures the energy and excitement of every occasion.',
             component: <SocialEvents />
-        }
+        },
+        '/portfolio/culturalevents': {
+            title: 'Cultural Events',
+            description: 'Celebrating the richness and diversity of cultural events through vibrant photography that captures the essence, traditions, and joyful moments of every occasion with authenticity and artistry.',
+            component: <CulturalEvents />
+        },
     }
 
 
@@ -48,6 +54,17 @@ export default function Portfolio() {
                         } 
                     >
                         <li className="cursor-pointer hover:font-bold">Personal Projects</li>
+                    </NavLink>
+                    
+                    <NavLink 
+                        to='/portfolio/culturalevents'
+                        className={({ isActive }) =>
+                            isActive 
+                                ? "text-[#C48F56] font-semibold border-b-2 lg:border-b-0 lg:border-l-3 lg:border-[#C48F56] lg:pl-3" 
+                                : "text-black hover:text-[#C48F56] lg:pl-3"
+                        } 
+                    >
+                        <li className="cursor-pointer hover:font-bold">Cultural Projects</li>
                     </NavLink>
 
                     <NavLink 
@@ -99,6 +116,7 @@ export default function Portfolio() {
                 <Routes>
                     <Route index element={<Navigate to="personalprojects" replace />} />
                     <Route path="personalprojects" element={<PersonalProjects />} />
+                    <Route path="culturalevents" element={<CulturalEvents />} />
                     <Route path="weddings" element={<Weddings />} />
                     <Route path="travel" element={<Travel />} />
                     <Route path="socialevents" element={<SocialEvents />} />

@@ -1,5 +1,8 @@
-import client1 from '../assets/client-1.jpeg'
+import dauraThakali from '../assets/clients/dauraThakali.jpg'
 import michaelGrills from '../assets/clients/Client-1.jpg'
+import wedding from '../assets/services/wedding.jpg'
+import socialEvent from '../assets/services/Socialevent.jpg'
+import personalEvent from '../assets/services/personalevents.jpg'
 import facebook from '../assets/socialMedia/facebook-mono.png'
 import instagram from '../assets/socialMedia/instagram.png'
 import { EventsElement } from '../components/AnimatedEvents'
@@ -73,7 +76,7 @@ export default function Clients() {
                 </div>
                 <Link
                     to={link}
-                    className='text-sm font-semibold border px-4 py-2 hover:bg-[#212121] hover:text-white cursor-pointer transition duration-300 ease-in-out'
+                    className='text-sm font-semibold border-2 px-4 py-2 hover:bg-[#212121] hover:text-white cursor-pointer transition duration-300 ease-in-out'
                 >
                     View more
                 </Link>
@@ -82,14 +85,9 @@ export default function Clients() {
     }
 
     const StatsSection = () => {
-        const [statsRef, statsVisible] = useScrollReveal()
         return (
             <div
-                ref={statsRef}
-                className={`flex lg:flex-col flex-row items-center rounded md:gap-20 gap-4 bg-[#F0F0F0] lg:py-12 lg:px-8 px-5 py-6 transition-all duration-1000 ease-out transform will-change-opacity will-change-transform ${
-                    statsVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-6"
-                }`}
-                style={{ transitionDelay: '400ms' }}
+                className="flex lg:flex-col flex-row items-center rounded md:gap-20 gap-4 bg-[#F0F0F0] lg:py-12 lg:px-8 px-5 py-6"
             >
                 <EventsElement number='80' title='Personal Events' />
                 <EventsElement number='56' title='Weddings Events' />
@@ -110,11 +108,11 @@ export default function Clients() {
                     delay={200}
                 />
                 <ClientsElements
-                    src={client1}
-                    name='Name of Client-2'
-                    description='Michael Grills offer the most authentic and juiciest sekuwa in town that is packed with Michael grills secret herbs and spices. Indulge yourself in the deliciousness of sittans and drinks.'
-                    facebookLink='https://www.facebook.com/michaelgrillspepsi'
-                    instagramLink='https://www.instagram.com/michael_grills_pepsicola?utm_source=ig_web_button_share_sheet&igsh=eW45cGVrYjYydHNz'
+                    src={dauraThakali}
+                    name='Daura Thakali Pepsicola'
+                    description='Established in the vibrant cityscape of Kathmandu in 2021, Daura Thakali Authentic Nepali Cuisine & Bar embarked on a mission to bring the soulful flavors of Thakali cuisine to the heart of Nepal.'
+                    facebookLink='https://www.facebook.com/BotaPepsicola'
+                    instagramLink='https://www.instagram.com/daurathakali/'
                     delay={300}
                 />
 
@@ -135,21 +133,21 @@ export default function Clients() {
 
             <div className='flex flex-col md:flex-row justify-center items-center gap-8'>
                 <ServicesElement
-                    src={client1}
+                    src={personalEvent}
                     title='Personal Events'
                     description='Capture the essence of your most cherished moments with our personalized event photography. From milestone celebrations to intimate gatherings, we create stunning visuals that tell your unique story. Let us preserve your memories with artistry and precision.'
                     link='/portfolio/personalprojects'
                     delay={300}
                 />
                 <ServicesElement
-                    src={client1}
+                    src={wedding}
                     title='Wedding Events'
                     description='Elevate your special day with our expert wedding photography services. We specialize in timeless portraits and candid moments, ensuring every detail of your ceremony and reception is beautifully documented. Trust us to craft your love story in pictures.'
                     link='/portfolio/weddings'
                     delay={400}
                 />
                 <ServicesElement
-                    src={client1}
+                    src={socialEvent}
                     title='Social Events'
                     description="Make your social gatherings unforgettable with our professional photography. Whether it's a corporate event, party, or community celebration, we deliver high-quality images that reflect the spirit of the occasion. Explore our portfolio to see the difference."
                     link='/portfolio/socialevents'

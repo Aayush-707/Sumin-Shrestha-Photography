@@ -45,7 +45,7 @@ export default function Navbar() {
                     className='sm:size-6 size-5 cursor-pointer hover:scale-110 transition' 
                 />
             </a>
-            <a href="" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
                 <img 
                     src={xIcon} 
                     alt="X" 
