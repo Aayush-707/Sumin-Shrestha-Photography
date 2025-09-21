@@ -25,7 +25,7 @@ export default function Clients() {
                 <img
                     src={src}
                     alt={`${name}-image`}
-                    className='sm:h-[300px] w-md object-cover rounded shadow-2xl'
+                    className='sm:h-[300px] h-[260px] w-md object-cover rounded shadow-2xl'
                 />
                 <div className='p-4 space-y-4'>
                     <h1 className='text-xl font-bold'>{name}</h1>
@@ -97,7 +97,7 @@ export default function Clients() {
     }
 
     return (
-        <section className='pt-30 sm:pt-48 mb-20 px-4 md:px-8 lg:px-14 xl:px-20 2xl:px-30'>
+        <section className='pt-30 sm:pt-48 mb-10 md:mb-20 px-4 md:px-8 lg:px-14 xl:px-20 2xl:px-30'>
             <div className='flex flex-col lg:flex-row items-center justify-center gap-8'>
                 <ClientsElements
                     src={michaelGrills}

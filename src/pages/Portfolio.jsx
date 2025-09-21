@@ -44,7 +44,7 @@ export default function Portfolio() {
     return (
         <section className="lg:pt-44 sm:pt-24 pt-16 md:px-10 px-4 mb-8 flex lg:flex-row flex-col gap-4">
             <div className="lg:w-[20%] w-full flex-col lg:sticky lg:top-28 self-start p-4 space-y-10 mt-10 lg:h-[80vh]">
-                <ul className="flex lg:flex-col flex-row sm:justify-center overflow-x-auto lg:overflow-visible whitespace-nowrap gap-4 text-sm lg:text-[16px] px-2 scrollbar-hide">
+                <ul className="flex lg:flex-col flex-row sm:justify-center overflow-x-auto lg:overflow-visible whitespace-nowrap gap-4 text-sm lg:text-[16px] px-2 scrollbar-none">
                     <NavLink 
                         to='/portfolio/personalprojects'
                         className={({ isActive }) =>

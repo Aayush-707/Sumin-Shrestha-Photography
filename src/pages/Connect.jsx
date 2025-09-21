@@ -17,7 +17,7 @@ const FormElements = ({type, id, name, autoComplete, title, placeholder, rules, 
             placeholder={placeholder} 
             autoComplete={autoComplete}
             {...register(name, rules)} 
-            className="border-2 border-gray-300 p-2 text-sm w-[300px] sm:w-[230px] focus:border-black focus:outline-none transition-colors "
+            className="border-2 border-gray-300 p-2 text-sm w-full sm:w-[230px] focus:border-black focus:outline-none transition-colors "
         />
         {errors[name] && (
             <span className="text-red-500 text-xs mt-1">{errors[name].message}</span>
@@ -167,7 +167,7 @@ export default function Connect(){
                                     required: "Message is required", 
                                     minLength: { value: 10, message: "Message must be at least 10 characters" } 
                                 })}
-                                className="border-2 border-gray-300 text-sm p-2 w-[300px] sm:w-[476px] focus:border-black focus:outline-none transition-colors"      
+                                className="border-2 border-gray-300 text-sm p-2 w-full sm:w-[476px] focus:border-black focus:outline-none transition-colors"      
                             />
                             {errors.user_message && (
                                 <span className="text-red-500 text-xs mt-1">{errors.user_message.message}</span>

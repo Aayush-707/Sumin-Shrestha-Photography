@@ -69,7 +69,7 @@ export default function About() {
             </div>
 
             {/* Cards section */}
-            <div className="my-16 sm:my-20 mb-2">
+            <div className="sm:my-20 mt-16">
                 <h1 
                 ref={titleRef}
                 className={`text-center lg:text-4xl md:text-3xl sm:text-2xl text-xl font-semibold transition-all duration-1000 ease-out transform ${
@@ -79,7 +79,7 @@ export default function About() {
                     What to expect
                 </h1>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center lg:gap-10 mt-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center lg:gap-10 mt-10">
                     <Cards 
                         src={lights} 
                         title="LIGHT COMPOSURE" 
