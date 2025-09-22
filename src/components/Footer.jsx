@@ -80,13 +80,13 @@ export default function Footer() {
                     <img src={logo} alt="logo" className='xl:h-26 hidden md:block' />
                     <div className=' hidden xl:block'>
                         <h1 className='text-2xl font-semibold mb-2 '>Sumin Shrestha</h1>
-                        <p className='text-xs text-gray-500 leading-6'>
-                            I’m a photographer with a passion for capturing authentic stories through my lens. From intimate portraits to grand celebrations, I focus on the details that make each moment unforgettable. Whether it’s weddings, events, or travel, my goal is to create timeless images that speak to emotion, beauty, and connection.
+                        <p className='text-xs text-gray-600 leading-6'>
+                            A passionate photographer with a love for capturing authentic stories through the lens. From intimate portraits to grand celebrations, every detail is carefully focused on to make each moment unforgettable.Whether it’s weddings, events, or travel, the goal is always to create timeless images that reflect emotion, beauty, and connection.
                         </p>
                     </div>
                 </div>
 
-                <div className='w-[50%] flex md:gap-10 sm:gap-12 gap-6 lg:ml-30 sm:ml-10'>
+                <div className='w-[50%] flex lg:gap-20 md:gap-10 sm:gap-12 gap-6 lg:ml-30 sm:ml-10'>
                     <div>
                         <h1 className='sm:text-2xl text-xl font-semibold mb-4 whitespace-nowrap'>Quick links</h1>
                         <ul className='list-disc ml-6 leading-6 sm:text-sm text-xs *:hover:font-bold '>

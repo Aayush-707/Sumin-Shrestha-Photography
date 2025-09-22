@@ -51,18 +51,19 @@ export default function About() {
                     `}
                     style={{ transitionDelay: aboutVisible ? '200ms' : '0ms' }}>
                         <h1 className="text-xl md:text-2xl xl:text-3xl font-semibold mb-4 xl:mb-6">
-                            My name is Sumin Shrestha,<br />
-                            <span className="text-[#C48F56]">I'm a Photographer.</span>
-                        </h1>
-                        <div className="space-y-2 text-xs xl:text-sm leading-6 xl:leading-7 pr-0 lg:pr-4 xl:pr-12 text-gray-600">
+                            Sumin Shrestha <br />
+                            <span className="text-[#C48F56]">Photographer</span>
+                            </h1>
+
+                            <div className="space-y-2 text-xs xl:text-sm leading-6 xl:leading-7 pr-0 lg:pr-4 xl:pr-12 text-gray-600">
                             <p>
-                                 My name is Sumin Shrestha, and I am a passionate photographer who believes that every picture has the power to tell a story. Through my lens, I strive to capture not just moments, but emotions, personalities, and the essence of each scene.
+                                I am a passionate photographer who believes that every picture has the power to tell a story. Through my lens, I strive to capture not just moments, but emotions, personalities, and the essence of each scene.
                             </p>
                             <p>
-                                Whether it's the intimacy of personal portraits, the joy of weddings, the energy of social events, or the breathtaking beauty of travel photography, I approach every project with creativity and attention to detail.
+                                From intimate personal portraits and the joy of weddings to vibrant social events and breathtaking travel photography, I approach every project with creativity, artistry, and attention to detail.
                             </p>
                             <p>
-                                Photography, for me, is more than just an art — it's a way of preserving memories and creating timeless connections. Each click is an opportunity to freeze a fleeting moment that can be cherished forever.
+                                Photography, to me, is more than just an art — it’s a way of preserving memories and building timeless connections. Each click is an opportunity to freeze a fleeting moment that can be cherished forever.
                             </p>
                         </div>
                 </div>

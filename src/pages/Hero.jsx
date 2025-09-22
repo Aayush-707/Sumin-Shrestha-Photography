@@ -1,4 +1,4 @@
-import profile from '../assets/pp.jpg';
+import profile from '../assets/pintrest.jpg';
 import ImageSlider from '../components/ImageSlider.jsx';
 import useScrollReveal from '../hooks/useScrollReveal.js';
 import Overview from '../components/Overview.jsx';
@@ -47,7 +47,7 @@ export default function Main() {
           ref={profileRef}
           src={profile}
           alt="profile"
-          className={`rounded-full shadow-xl hidden md:block transition-all duration-700 transform
+          className={`rounded-4xl object-cover shadow-xl h-[60vh] hidden md:block transition-all duration-700 transform
             ${profileVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-40"}
           `}
         />
@@ -57,16 +57,15 @@ export default function Main() {
             ${aboutVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-40"}
           `}
         >
-            <h1 className="font-semibold md:text-xl text-lg mb-4">About me</h1>
-            <h2 className="xl:text-4xl md:text-3xl sm:text-2xl text-[23px] font-bold sm:mb-6 mb-4 leading-10 md:leading-12">
-              My name is Sumin Shrestha, <br />
-              I'm a <span className="text-[#C48F56]">Photographer</span>
-            </h2>
+            <h1 className="xl:text-4xl md:text-3xl sm:text-2xl text-[23px] font-bold sm:mb-6 mb-4 leading-10 md:leading-12">
+              Capturing Stories Through the Lens of <span className="text-[#C48F56]">Sumin Shrestha</span>
+            </h1>
             <p className="sm:text-sm text-xs text-gray-600 font-light mb-8 leading-6">
-              My name is Sumin Shrestha, and I’m a passionate Photographer dedicated to capturing life’s most meaningful moments. I believe every picture has a story to tell — whether it’s the intimacy of a personal event, the joy of weddings, or the vibrance of social gatherings.
+              Photography, for me, is more than just images — it’s about preserving emotions, stories, and connections. Whether it’s the intimacy of a wedding, the warmth of a personal project, or the energy of a social event, every moment is an opportunity to create lasting memories.  
               <br />
-              With years of experience behind the lens, I strive to create timeless images that reflect real emotions and lasting memories. My goal is simple: to help you relive your most cherished experiences every time you look at a photograph.
+              As a dedicated photographer, I strive to deliver photographs that feel authentic, timeless, and full of life.
             </p>
+
             <div className='flex flex-row  items-center rounded md:gap-20 gap-4 mb-6'>
                 <EventsElement number = '80' title = 'Personal Events' />
                 <EventsElement number = '56' title = 'Weddings Events' />
